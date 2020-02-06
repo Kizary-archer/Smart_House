@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Remote_Control_DIY_Smart_House:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/Remote_Control_DIY_Smart_House</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="Remote_Control_DIY_Smart_House/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Remote_Control_DIY_Smart_House" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
