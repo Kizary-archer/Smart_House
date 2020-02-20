@@ -6,8 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="WebServer" />
         <module name="Remote_Control_DIY_Smart_House" />
+        <module name="Smart_House" />
+        <module name="WebServer" />
       </profile>
     </annotationProcessing>
   </component>
