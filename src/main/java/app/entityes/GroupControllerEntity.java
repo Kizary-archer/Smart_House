@@ -13,6 +13,7 @@ public class GroupControllerEntity {
     private Collection<GroupsControllersEntity> groupsControllersByIdGroup;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_group", nullable = false)
     public Long getIdGroup() {
         return idGroup;

@@ -13,6 +13,7 @@ public class TypeDevicesEntity {
     private Collection<DevicesEntity> devicesByIdType;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_type", nullable = false)
     public Long getIdType() {
         return idType;

@@ -15,6 +15,7 @@ public class GroupFunctionEntity {
     private UsersEntity usersByUser;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_group", nullable = false)
     public Long getIdGroup() {
         return idGroup;
@@ -80,7 +81,7 @@ public class GroupFunctionEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "user", referencedColumnName = "id_user", nullable = false)
+    @JoinColumn(name = "user", referencedColumnName = "id_user", nullable = false,insertable = false, updatable = false)
     public UsersEntity getUsersByUser() {
         return usersByUser;
     }

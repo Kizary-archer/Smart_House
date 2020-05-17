@@ -8,6 +8,7 @@ import java.util.Objects;
 public class GroupsControllersEntity {
     private Long group;
     private Long controller;
+    private Long id;
     private GroupControllerEntity groupControllerByGroup;
     private ControllersEntity controllersByController;
 
@@ -31,18 +32,29 @@ public class GroupsControllersEntity {
         this.controller = controller;
     }
 
+    @Id
+    @Column(name = "id", nullable = false)
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         GroupsControllersEntity that = (GroupsControllersEntity) o;
         return Objects.equals(group, that.group) &&
-                Objects.equals(controller, that.controller);
+                Objects.equals(controller, that.controller) &&
+                Objects.equals(id, that.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(group, controller);
+        return Objects.hash(group, controller, id);
     }
 
     @ManyToOne

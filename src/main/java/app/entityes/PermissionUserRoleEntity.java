@@ -8,6 +8,7 @@ import java.util.Objects;
 public class PermissionUserRoleEntity {
     private Long userRole;
     private Long permission;
+    private Long id;
     private UserRoleEntity userRoleByUserRole;
     private PermisionsEntity permisionsByPermission;
 
@@ -31,18 +32,29 @@ public class PermissionUserRoleEntity {
         this.permission = permission;
     }
 
+    @Id
+    @Column(name = "id", nullable = false)
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         PermissionUserRoleEntity that = (PermissionUserRoleEntity) o;
         return Objects.equals(userRole, that.userRole) &&
-                Objects.equals(permission, that.permission);
+                Objects.equals(permission, that.permission) &&
+                Objects.equals(id, that.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userRole, permission);
+        return Objects.hash(userRole, permission, id);
     }
 
     @ManyToOne

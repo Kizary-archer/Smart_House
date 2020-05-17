@@ -12,6 +12,7 @@ public class PermisionsEntity {
     private Collection<PermissionUserRoleEntity> permissionUserRolesByIdPermission;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_permission", nullable = false)
     public Long getIdPermission() {
         return idPermission;

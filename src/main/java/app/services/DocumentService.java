@@ -1,8 +1,6 @@
 package app.services;
 
-import app.DAO.DAOinterfaces.DocumentDAO;
 import app.Util.DAOCreateFactoryUtil;
-import app.entityes.*;
 
 import java.util.Collection;
 

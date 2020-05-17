@@ -21,6 +21,7 @@ public class DevicesEntity {
     private Collection<FunctionDevicesEntity> functionDevicesByIdDevice;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_device", nullable = false)
     public Long getIdDevice() {
         return idDevice;
@@ -110,7 +111,7 @@ public class DevicesEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "controller", referencedColumnName = "id_controller", nullable = false)
+    @JoinColumn(name = "controller", referencedColumnName = "id_controller", nullable = false,insertable = false, updatable = false)
     public ControllersEntity getControllersByController() {
         return controllersByController;
     }
@@ -120,7 +121,7 @@ public class DevicesEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "type_device", referencedColumnName = "id_type", nullable = false)
+    @JoinColumn(name = "type_device", referencedColumnName = "id_type", nullable = false,insertable = false, updatable = false)
     public TypeDevicesEntity getTypeDevicesByTypeDevice() {
         return typeDevicesByTypeDevice;
     }
@@ -130,7 +131,7 @@ public class DevicesEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "work_status", referencedColumnName = "id_status", nullable = false)
+    @JoinColumn(name = "work_status", referencedColumnName = "id_status", nullable = false,insertable = false, updatable = false)
     public WorkStatusEntity getWorkStatusByWorkStatus() {
         return workStatusByWorkStatus;
     }

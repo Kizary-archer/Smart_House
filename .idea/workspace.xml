@@ -25,100 +25,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97a65637-dbef-472c-8350-68d5ef732941" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/DAO/AgentDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/DAO/ApartmentDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/DAO/ApartmentSaleDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/DAO/CityDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/DAO/ClientDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/DAO/DAOinterfaces/AgentDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/DAO/DAOinterfaces/ApartmentDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/DAO/DAOinterfaces/ApartmentSaleDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/DAO/DAOinterfaces/CityDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/DAO/DAOinterfaces/ClientDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/DAO/DAOinterfaces/DAOMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/DAO/DAOinterfaces/DocumentDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/DAO/DocumentDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/Util/CharsetFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/Util/DAOCreateFactoryUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/Util/HibernateSessionFactoryUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/builder/AgentBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/builder/ApartmentBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/builder/ApartmentSaleBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/builder/ClientBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/builder/DocumentBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/builder/HouseViewBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/controllers/AgentServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/controllers/ApartmentSaleServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/controllers/ApartmentServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/controllers/ClientServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/controllers/DocumentServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/entityes/ControllerModelEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/entityes/ControllersEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/entityes/DevicesEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/entityes/FunctionDevicesEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/entityes/FunctionsGroupsEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/entityes/GroupControllerEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/entityes/GroupFunctionEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/entityes/GroupsControllersEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/entityes/JournalErrorEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/entityes/JournalEventEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/entityes/JournalUserRequestEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/entityes/PermisionsEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/entityes/PermissionUserRoleEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/entityes/TypeDevicesEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/entityes/TypeErrorEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/entityes/TypeEventEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/entityes/TypeFunctionEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/entityes/UserRoleEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/entityes/UserStatusEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/entityes/UsersEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/entityes/WorkStatusEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/services/AgentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/services/ApartmentSaleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/services/ApartmentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/services/CityService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/services/ClientService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/services/DocumentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/documentTypeSelect.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/houseSelect.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/multiSelect.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/addAgent.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/addApartment.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/addApartmentSale.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/addCity.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/addClient.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/addDocument.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/listAgents.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/listApartmentSales.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/listApartments.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/listClients.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/template/AgentTempl/DTAgents.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/template/AgentTempl/DTApartSaleAgent.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/template/ApartmentSaleTemp/DTApartmentSales.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/template/ApartmentTemp/DTApartments.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/template/ApartmentTemp/DTSearchHouse.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/template/ClientTempl/DTApartClient.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/template/ClientTempl/DTApartSaleClient.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/template/ClientTempl/DTClients.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/template/ClientTempl/DTDocumentsClient.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/template/DocumentTempl/DTDocumentType.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/template/header.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/viewAgent.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/viewApartment.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/viewApartmentSale.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/viewClient.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/viewDocument.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/entities/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/model/Model.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/servlets/AddServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/servlets/ListServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/add.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/list.jsp" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/DAO/DAOinterfaces/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/DAO/AgentDAOImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/DAO/ApartmentDAOImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/DAO/ApartmentSaleDAOImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/DAO/CityDAOImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/DAO/ClientDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/DAO/UserDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/DAO/DAOinterfaces/AgentDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/DAO/DAOinterfaces/ApartmentDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/DAO/DAOinterfaces/ApartmentSaleDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/DAO/DAOinterfaces/CityDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/DAO/DAOinterfaces/DocumentDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/DAO/DocumentDAOImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/entityes/ControllerModelEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entityes/ControllerModelEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/entityes/ControllersEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entityes/ControllersEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/entityes/DevicesEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entityes/DevicesEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/entityes/FunctionDevicesEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entityes/FunctionDevicesEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/entityes/FunctionsGroupsEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entityes/FunctionsGroupsEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/entityes/GroupControllerEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entityes/GroupControllerEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/entityes/GroupFunctionEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entityes/GroupFunctionEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/entityes/GroupsControllersEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entityes/GroupsControllersEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/entityes/JournalErrorEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entityes/JournalErrorEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/entityes/JournalEventEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entityes/JournalEventEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/entityes/JournalUserRequestEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entityes/JournalUserRequestEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/entityes/PermisionsEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entityes/PermisionsEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/entityes/PermissionUserRoleEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entityes/PermissionUserRoleEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/entityes/TypeDevicesEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entityes/TypeDevicesEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/entityes/TypeErrorEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entityes/TypeErrorEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/entityes/TypeEventEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entityes/TypeEventEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/entityes/TypeFunctionEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entityes/TypeFunctionEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/entityes/UserRoleEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entityes/UserRoleEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/entityes/UserStatusEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entityes/UserStatusEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/entityes/UsersEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entityes/UsersEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/entityes/WorkStatusEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entityes/WorkStatusEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/services/AgentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/services/AgentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/services/ApartmentSaleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/services/ApartmentSaleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/services/ApartmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/services/ApartmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/services/DocumentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/services/DocumentService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,8 +73,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="hibernate-configuration-5.2" />
         <option value="hibernate-main-5.2" />
+        <option value="hibernate-configuration-5.2" />
         <option value="Class" />
       </list>
     </option>
@@ -158,13 +103,16 @@
     </option>
   </component>
   <component name="ProjectId" id="1WIwtw5kWG4pBZIWxprOLvFgygb" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="postgresql" />
-    <property name="JPA.DatabaseSchemaImportDialog" value="db45639c-e475-4af9-8529-fe605164e8d8" />
+    <property name="JPA.DatabaseSchemaImportDialog" value="46d94b72-782b-48dd-988d-06741b1f7139" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -177,6 +125,9 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.JPA/Hibernate QL" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="app.DAO.DAOinterfaces" />
+    </key>
     <key name="ImportMappingsDialog.RecentPackages">
       <recent name="app.entityes" />
     </key>
@@ -278,7 +229,7 @@
       <workItem from="1581012059200" duration="4692000" />
       <workItem from="1582226367746" duration="572000" />
       <workItem from="1589740332552" duration="2033000" />
-      <workItem from="1589742501357" duration="44000" />
+      <workItem from="1589742501357" duration="1986000" />
     </task>
     <servers />
   </component>
@@ -319,46 +270,46 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="529" y="205" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1600.860@0.0.1600.860" timestamp="1589741343998" />
-    <state x="427" y="81" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1589741606422">
+    <state x="427" y="81" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1589743985173">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="427" y="81" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1600.860@0.0.1600.860" timestamp="1589741606422" />
-    <state x="805" y="354" width="424" height="160" key="#com.intellij.javaee.module.view.common.J2EE.J2EEDeploymentDescriptorLocationPanel.changeDDPath" timestamp="1589742237882">
+    <state x="427" y="81" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1600.860@0.0.1600.860" timestamp="1589743985173" />
+    <state x="805" y="354" width="424" height="160" key="#com.intellij.javaee.module.view.common.J2EE.J2EEDeploymentDescriptorLocationPanel.changeDDPath" timestamp="1589744486706">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="805" y="354" width="424" height="160" key="#com.intellij.javaee.module.view.common.J2EE.J2EEDeploymentDescriptorLocationPanel.changeDDPath/0.0.1600.860@0.0.1600.860" timestamp="1589742237882" />
-    <state x="470" y="135" width="898" height="725" key="#com.intellij.jpa.generation.ui.DatabaseSchemaImportDialog" timestamp="1589741683061">
+    <state x="805" y="354" width="424" height="160" key="#com.intellij.javaee.module.view.common.J2EE.J2EEDeploymentDescriptorLocationPanel.changeDDPath/0.0.1600.860@0.0.1600.860" timestamp="1589744486706" />
+    <state x="470" y="135" width="898" height="725" key="#com.intellij.jpa.generation.ui.DatabaseSchemaImportDialog" timestamp="1589744010692">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="470" y="135" width="898" height="725" key="#com.intellij.jpa.generation.ui.DatabaseSchemaImportDialog/0.0.1600.860@0.0.1600.860" timestamp="1589741683061" />
-    <state x="530" y="176" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589741509674">
+    <state x="470" y="135" width="898" height="725" key="#com.intellij.jpa.generation.ui.DatabaseSchemaImportDialog/0.0.1600.860@0.0.1600.860" timestamp="1589744010692" />
+    <state x="530" y="176" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589743867210">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="530" y="176" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1600.860@0.0.1600.860" timestamp="1589741509674" />
+    <state x="530" y="176" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1600.860@0.0.1600.860" timestamp="1589743867210" />
     <state x="688" y="175" key="FileChooserDialogImpl" timestamp="1589742236758">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="688" y="175" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1589742236758" />
-    <state width="1557" height="2" key="GridCell.Tab.0.bottom" timestamp="1589742370948">
+    <state width="1557" height="2" key="GridCell.Tab.0.bottom" timestamp="1589743065463">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1322" height="6" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1582226946217" />
-    <state width="1557" height="2" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1589742370948" />
-    <state width="1557" height="2" key="GridCell.Tab.0.center" timestamp="1589742370947">
+    <state width="1557" height="2" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1589743065463" />
+    <state width="1557" height="2" key="GridCell.Tab.0.center" timestamp="1589743065463">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1322" height="6" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1582226946217" />
-    <state width="1557" height="2" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1589742370947" />
-    <state width="1557" height="2" key="GridCell.Tab.0.left" timestamp="1589742370947">
+    <state width="1557" height="2" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1589743065463" />
+    <state width="1557" height="2" key="GridCell.Tab.0.left" timestamp="1589743065463">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1322" height="6" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1582226946217" />
-    <state width="1557" height="2" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1589742370947" />
-    <state width="1557" height="2" key="GridCell.Tab.0.right" timestamp="1589742370948">
+    <state width="1557" height="2" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1589743065463" />
+    <state width="1557" height="2" key="GridCell.Tab.0.right" timestamp="1589743065463">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1322" height="6" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1582226946217" />
-    <state width="1557" height="2" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1589742370948" />
+    <state width="1557" height="2" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1589743065463" />
     <state width="1069" height="59" key="GridCell.Tab.1.bottom" timestamp="1589742370940">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -399,10 +350,10 @@
     </state>
     <state width="904" height="151" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1582226946217" />
     <state width="1069" height="59" key="GridCell.Tab.2.right/0.0.1600.860@0.0.1600.860" timestamp="1589742370940" />
-    <state x="484" y="8" key="SettingsEditor" timestamp="1589742239824">
+    <state x="484" y="8" key="SettingsEditor" timestamp="1589744488138">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="9" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1582226783534" />
-    <state x="484" y="8" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1589742239824" />
+    <state x="484" y="8" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1589744488138" />
   </component>
 </project>

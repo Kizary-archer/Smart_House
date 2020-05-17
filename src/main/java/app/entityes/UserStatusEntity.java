@@ -13,6 +13,7 @@ public class UserStatusEntity {
     private Collection<UsersEntity> usersByIdUserStatus;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_user_status", nullable = false)
     public Long getIdUserStatus() {
         return idUserStatus;

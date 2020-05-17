@@ -13,6 +13,7 @@ public class TypeErrorEntity {
     private Collection<JournalErrorEntity> journalErrorsByIdError;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_error", nullable = false)
     public Long getIdError() {
         return idError;

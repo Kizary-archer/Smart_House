@@ -22,6 +22,7 @@ public class FunctionDevicesEntity {
     private Collection<JournalEventEntity> journalEventsByIdFunction;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_function", nullable = false)
     public Long getIdFunction() {
         return idFunction;
@@ -122,7 +123,7 @@ public class FunctionDevicesEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "device", referencedColumnName = "id_device", nullable = false)
+    @JoinColumn(name = "device", referencedColumnName = "id_device", nullable = false,insertable = false, updatable = false)
     public DevicesEntity getDevicesByDevice() {
         return devicesByDevice;
     }
@@ -132,7 +133,7 @@ public class FunctionDevicesEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "type_function", referencedColumnName = "id_type", nullable = false)
+    @JoinColumn(name = "type_function", referencedColumnName = "id_type", nullable = false,insertable = false, updatable = false)
     public TypeFunctionEntity getTypeFunctionByTypeFunction() {
         return typeFunctionByTypeFunction;
     }

@@ -15,6 +15,7 @@ public class ControllerModelEntity {
     private Collection<ControllersEntity> controllersByIdModel;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_model", nullable = false)
     public Long getIdModel() {
         return idModel;

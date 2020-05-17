@@ -8,6 +8,7 @@ import java.util.Objects;
 public class FunctionsGroupsEntity {
     private Long functionDevices;
     private Long groupFunction;
+    private Long id;
     private FunctionDevicesEntity functionDevicesByFunctionDevices;
     private GroupFunctionEntity groupFunctionByGroupFunction;
 
@@ -31,18 +32,29 @@ public class FunctionsGroupsEntity {
         this.groupFunction = groupFunction;
     }
 
+    @Id
+    @Column(name = "id", nullable = false)
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         FunctionsGroupsEntity that = (FunctionsGroupsEntity) o;
         return Objects.equals(functionDevices, that.functionDevices) &&
-                Objects.equals(groupFunction, that.groupFunction);
+                Objects.equals(groupFunction, that.groupFunction) &&
+                Objects.equals(id, that.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(functionDevices, groupFunction);
+        return Objects.hash(functionDevices, groupFunction, id);
     }
 
     @ManyToOne

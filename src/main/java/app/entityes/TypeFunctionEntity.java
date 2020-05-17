@@ -14,6 +14,7 @@ public class TypeFunctionEntity {
     private Collection<FunctionDevicesEntity> functionDevicesByIdType;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_type", nullable = false)
     public Long getIdType() {
         return idType;

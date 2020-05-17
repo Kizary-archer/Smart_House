@@ -14,6 +14,7 @@ public class WorkStatusEntity {
     private Collection<DevicesEntity> devicesByIdStatus;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_status", nullable = false)
     public Long getIdStatus() {
         return idStatus;

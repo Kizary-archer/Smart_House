@@ -13,6 +13,7 @@ public class TypeEventEntity {
     private Collection<JournalEventEntity> journalEventsByIdEvent;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_event", nullable = false)
     public Long getIdEvent() {
         return idEvent;

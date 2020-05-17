@@ -21,6 +21,7 @@ public class UsersEntity {
     private UserStatusEntity userStatusByStatus;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_user", nullable = false)
     public Long getIdUser() {
         return idUser;
@@ -126,7 +127,7 @@ public class UsersEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "role", referencedColumnName = "id_role", nullable = false)
+    @JoinColumn(name = "role", referencedColumnName = "id_role", nullable = false,insertable = false, updatable = false)
     public UserRoleEntity getUserRoleByRole() {
         return userRoleByRole;
     }
@@ -136,7 +137,7 @@ public class UsersEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "status", referencedColumnName = "id_user_status", nullable = false)
+    @JoinColumn(name = "status", referencedColumnName = "id_user_status", nullable = false,insertable = false, updatable = false)
     public UserStatusEntity getUserStatusByStatus() {
         return userStatusByStatus;
     }

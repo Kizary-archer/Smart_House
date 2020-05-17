@@ -18,6 +18,7 @@ public class JournalErrorEntity {
     private FunctionDevicesEntity functionDevicesByFunctionDevices;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_error", nullable = false)
     public Long getIdError() {
         return idError;
@@ -96,7 +97,7 @@ public class JournalErrorEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "type_error", referencedColumnName = "id_error", nullable = false)
+    @JoinColumn(name = "type_error", referencedColumnName = "id_error", nullable = false,insertable = false, updatable = false)
     public TypeErrorEntity getTypeErrorByTypeError() {
         return typeErrorByTypeError;
     }
@@ -106,7 +107,7 @@ public class JournalErrorEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "user_request", referencedColumnName = "id_request")
+    @JoinColumn(name = "user_request", referencedColumnName = "id_request",insertable = false, updatable = false)
     public JournalUserRequestEntity getJournalUserRequestByUserRequest() {
         return journalUserRequestByUserRequest;
     }
@@ -116,7 +117,7 @@ public class JournalErrorEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "function_devices", referencedColumnName = "id_function", nullable = false)
+    @JoinColumn(name = "function_devices", referencedColumnName = "id_function", nullable = false,insertable = false, updatable = false)
     public FunctionDevicesEntity getFunctionDevicesByFunctionDevices() {
         return functionDevicesByFunctionDevices;
     }

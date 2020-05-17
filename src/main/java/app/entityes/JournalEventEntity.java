@@ -18,6 +18,7 @@ public class JournalEventEntity {
     private JournalUserRequestEntity journalUserRequestByUserRequest;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_event", nullable = false)
     public Long getIdEvent() {
         return idEvent;
@@ -96,7 +97,7 @@ public class JournalEventEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "type_event", referencedColumnName = "id_event", nullable = false)
+    @JoinColumn(name = "type_event", referencedColumnName = "id_event", nullable = false,insertable = false, updatable = false)
     public TypeEventEntity getTypeEventByTypeEvent() {
         return typeEventByTypeEvent;
     }
@@ -106,7 +107,7 @@ public class JournalEventEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "function_devices", referencedColumnName = "id_function", nullable = false)
+    @JoinColumn(name = "function_devices", referencedColumnName = "id_function", nullable = false,insertable = false, updatable = false)
     public FunctionDevicesEntity getFunctionDevicesByFunctionDevices() {
         return functionDevicesByFunctionDevices;
     }
@@ -116,7 +117,7 @@ public class JournalEventEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "user_request", referencedColumnName = "id_request")
+    @JoinColumn(name = "user_request", referencedColumnName = "id_request",insertable = false, updatable = false)
     public JournalUserRequestEntity getJournalUserRequestByUserRequest() {
         return journalUserRequestByUserRequest;
     }

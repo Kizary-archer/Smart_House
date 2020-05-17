@@ -21,6 +21,7 @@ public class ControllersEntity {
     private Collection<GroupsControllersEntity> groupsControllersByIdController;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_controller", nullable = false)
     public Long getIdController() {
         return idController;
@@ -99,7 +100,7 @@ public class ControllersEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "user", referencedColumnName = "id_user", nullable = false)
+    @JoinColumn(name = "user", referencedColumnName = "id_user", nullable = false,insertable = false, updatable = false)
     public UsersEntity getUsersByUser() {
         return usersByUser;
     }
@@ -109,7 +110,7 @@ public class ControllersEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "model", referencedColumnName = "id_model")
+    @JoinColumn(name = "model", referencedColumnName = "id_model",insertable = false, updatable = false)
     public ControllerModelEntity getControllerModelByModel() {
         return controllerModelByModel;
     }
@@ -119,7 +120,7 @@ public class ControllersEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "work_status", referencedColumnName = "id_status", nullable = false)
+    @JoinColumn(name = "work_status", referencedColumnName = "id_status", nullable = false,insertable = false, updatable = false)
     public WorkStatusEntity getWorkStatusByWorkStatus() {
         return workStatusByWorkStatus;
     }

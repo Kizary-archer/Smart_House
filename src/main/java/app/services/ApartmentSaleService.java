@@ -1,7 +1,5 @@
 package app.services;
 
-import app.DAO.DAOinterfaces.ApartmentDAO;
-import app.DAO.DAOinterfaces.ApartmentSaleDAO;
 import app.Util.DAOCreateFactoryUtil;
 import app.entityes.ApartmentEntity;
 import app.entityes.ApartmentSaleEntity;

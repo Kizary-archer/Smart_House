@@ -1,6 +1,5 @@
-package app.DAO;
+package app.DAO.DAOinterfaces;
 
-import app.DAO.DAOinterfaces.ClientDAO;
 import app.entityes.ClientEntity;
 import org.hibernate.Session;
 
@@ -12,7 +11,7 @@ import javax.persistence.criteria.Root;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ClientDAOImpl implements ClientDAO {
+public class UserDAOImpl implements ClientDAO {
 
     @Override
     public List<ClientEntity> getClients(int limit, int offset, ClientEntity clientEntity) {
