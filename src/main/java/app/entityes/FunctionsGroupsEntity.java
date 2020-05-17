@@ -33,6 +33,7 @@ public class FunctionsGroupsEntity {
     }
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     public Long getId() {
         return id;
@@ -58,7 +59,7 @@ public class FunctionsGroupsEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "function_devices", referencedColumnName = "id_function", nullable = false)
+    @JoinColumn(name = "function_devices", referencedColumnName = "id_function", nullable = false,insertable = false, updatable = false)
     public FunctionDevicesEntity getFunctionDevicesByFunctionDevices() {
         return functionDevicesByFunctionDevices;
     }
@@ -68,7 +69,7 @@ public class FunctionsGroupsEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "group_function", referencedColumnName = "id_group", nullable = false)
+    @JoinColumn(name = "group_function", referencedColumnName = "id_group", nullable = false,insertable = false, updatable = false)
     public GroupFunctionEntity getGroupFunctionByGroupFunction() {
         return groupFunctionByGroupFunction;
     }

@@ -1,15 +1,20 @@
 package app.DAO.DAOinterfaces;
 
-import app.entityes.ClientEntity;
+import app.entityes.ControllersEntity;
+import app.entityes.GroupFunctionEntity;
+import app.entityes.JournalUserRequestEntity;
+import app.entityes.UsersEntity;
 
 import java.util.Collection;
 
-public interface ClientDAO extends DAOMain<ClientEntity> {
+public interface UserDAO extends DAOMain<UsersEntity> {
 
-    public Collection<ClientEntity> getClients(int limit, int offset, ClientEntity clientEntity);
-    public ClientEntity getClientDocument(int idClient);
-    public ClientEntity getClientapartmentSales(int idClient);
-    public ClientEntity getClientapartments(int idClient);
-    public ClientEntity getClientById(int idClient);
-    public ClientEntity getClientAllChild(int idClient);
+    public Collection<UsersEntity> getUsers(int limit, int offset, UsersEntity usersEntity);
+    public UsersEntity getControllersByIdUser(int idUser);
+    public UsersEntity getGroupFunctionsByIdUser(int idUser);
+    public UsersEntity getJournalUserRequestsByIdUser(int idUser);
+    public UsersEntity getUserRoleByRole(int idUser);
+    public UsersEntity getUserStatusByStatus(int idUser);
+    public UsersEntity getUserById(int idUser);
+    public UsersEntity getUserAllChild(int idUser);
 }

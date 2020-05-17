@@ -33,6 +33,7 @@ public class GroupsControllersEntity {
     }
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     public Long getId() {
         return id;
@@ -58,7 +59,7 @@ public class GroupsControllersEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "group", referencedColumnName = "id_group", nullable = false)
+    @JoinColumn(name = "group", referencedColumnName = "id_group", nullable = false,insertable = false, updatable = false)
     public GroupControllerEntity getGroupControllerByGroup() {
         return groupControllerByGroup;
     }
@@ -68,7 +69,7 @@ public class GroupsControllersEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "controller", referencedColumnName = "id_controller", nullable = false)
+    @JoinColumn(name = "controller", referencedColumnName = "id_controller", nullable = false,insertable = false, updatable = false)
     public ControllersEntity getControllersByController() {
         return controllersByController;
     }
