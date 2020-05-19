@@ -1,10 +1,6 @@
 package app.DAO;
 
 import app.DAO.DAOinterfaces.UserDAO;
-import app.entityes.ClientEntity;
-import app.entityes.ControllersEntity;
-import app.entityes.GroupFunctionEntity;
-import app.entityes.JournalUserRequestEntity;
 import app.entityes.UsersEntity;
 import org.hibernate.Session;
 

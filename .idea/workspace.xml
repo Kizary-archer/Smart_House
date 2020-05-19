@@ -25,25 +25,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97a65637-dbef-472c-8350-68d5ef732941" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/DAO/DAOinterfaces/ClientDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/DAO/DAOinterfaces/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/DAO/DAOinterfaces/UserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/DAO/ControllersDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/DAO/DAOinterfaces/ControllersDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/DAO/DAOinterfaces/DevicesDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/DAO/DAOinterfaces/FunctionDevicesDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/DAO/DAOinterfaces/JournalErrorDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/DAO/DAOinterfaces/JournalEventDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/DAO/DevicesDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/DAO/FunctionDeviceDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/DAO/JournalErrorDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/DAO/JournalEventDAOImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/DAO/UserDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/DAO/UserDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/builder/AgentBuilder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/builder/ApartmentBuilder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/builder/ApartmentSaleBuilder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/builder/ClientBuilder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/builder/DocumentBuilder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/builder/HouseViewBuilder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/AgentServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/ApartmentSaleServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/ApartmentServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/ClientServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/DocumentServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/entityes/FunctionsGroupsEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entityes/FunctionsGroupsEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/entityes/GroupsControllersEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entityes/GroupsControllersEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/entityes/PermissionUserRoleEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entityes/PermissionUserRoleEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/services/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/services/ClientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/Util/DAOCreateFactoryUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/services/AgentService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/services/ApartmentSaleService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/services/ApartmentService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/services/CityService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/services/ClientService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/services/DocumentService.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,11 +104,12 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.JPA/Hibernate QL" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="app.DAO.DAOinterfaces" />
-    </key>
     <key name="ImportMappingsDialog.RecentPackages">
       <recent name="app.entityes" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="app.DAO" />
+      <recent name="app.DAO.DAOinterfaces" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -223,7 +223,9 @@
       <workItem from="1589740332552" duration="2033000" />
       <workItem from="1589742501357" duration="2170000" />
       <workItem from="1589744683179" duration="7000" />
-      <workItem from="1589744696021" duration="3032000" />
+      <workItem from="1589744696021" duration="3631000" />
+      <workItem from="1589791516381" duration="720000" />
+      <workItem from="1589911017949" duration="9778000" />
     </task>
     <servers />
   </component>
@@ -260,10 +262,10 @@
     </state>
     <state x="137" y="17" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1582226800043" />
     <state x="160" y="20" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1589742543779" />
-    <state x="605" y="133" key="#com.intellij.ide.util.MemberChooser" timestamp="1589745736100">
+    <state x="605" y="133" key="#com.intellij.ide.util.MemberChooser" timestamp="1589920324239">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="605" y="133" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1589745736100" />
+    <state x="605" y="133" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1589920324239" />
     <state x="529" y="205" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1589741343998">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -288,26 +290,26 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="688" y="175" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1589742236758" />
-    <state width="1557" height="2" key="GridCell.Tab.0.bottom" timestamp="1589744672984">
+    <state width="1557" height="28" key="GridCell.Tab.0.bottom" timestamp="1589921268852">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1322" height="6" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1582226946217" />
-    <state width="1557" height="2" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1589744672984" />
-    <state width="1557" height="2" key="GridCell.Tab.0.center" timestamp="1589744672984">
+    <state width="1557" height="28" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1589921268852" />
+    <state width="1557" height="28" key="GridCell.Tab.0.center" timestamp="1589921268852">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1322" height="6" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1582226946217" />
-    <state width="1557" height="2" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1589744672984" />
-    <state width="1557" height="2" key="GridCell.Tab.0.left" timestamp="1589744672984">
+    <state width="1557" height="28" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1589921268852" />
+    <state width="1557" height="28" key="GridCell.Tab.0.left" timestamp="1589921268852">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1322" height="6" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1582226946217" />
-    <state width="1557" height="2" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1589744672984" />
-    <state width="1557" height="2" key="GridCell.Tab.0.right" timestamp="1589744672984">
+    <state width="1557" height="28" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1589921268852" />
+    <state width="1557" height="28" key="GridCell.Tab.0.right" timestamp="1589921268852">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1322" height="6" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1582226946217" />
-    <state width="1557" height="2" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1589744672984" />
+    <state width="1557" height="28" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1589921268852" />
     <state width="1069" height="59" key="GridCell.Tab.1.bottom" timestamp="1589742370940">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
