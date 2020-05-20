@@ -38,6 +38,9 @@
         <mapping class="app.entityes.UserStatusEntity"/>
         <mapping class="app.entityes.UsersEntity"/>
         <mapping class="app.entityes.WorkStatusEntity"/>
+        <mapping class="app.entityes.ControllerviewEntity"/>
+        <mapping class="app.entityes.DeviceviewEntity"/>
+        <mapping class="app.entityes.UserviewEntity"/>
 
     </session-factory>
 </hibernate-configuration>

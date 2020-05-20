@@ -12,5 +12,4 @@ public interface JournalErrorDAO extends DAOMain<JournalErrorEntity> {
     public JournalErrorEntity getJournalUserRequestByUserRequest(int idError);
     public JournalErrorEntity getFunctionDevicesByFunctionDevices(int idError);
     public JournalErrorEntity getJournalErrorById(int idError);
-
 }
