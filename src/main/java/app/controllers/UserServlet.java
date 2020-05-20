@@ -1,5 +1,6 @@
 package app.controllers;
 
+import app.builder.UserBuilder;
 import app.entityes.UserviewEntity;
 import app.services.UserService;
 import com.google.gson.Gson;
@@ -38,14 +39,14 @@ public class UserServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
         UserService userService = new UserService();
-       /* ApartmentEntity apartmentEntity = null;
+        UserviewEntity userviewEntity = null;
         try {
-            apartmentEntity = new ApartmentBuilder(request).build();
+            userviewEntity = new UserBuilder(request).build();
         } catch (Exception e) {
             e.printStackTrace();
-        }*/
+        }
         if(request.getServletPath().equals("/DTUserView")) {
-            List<UserviewEntity> userviewEntityList = (List<UserviewEntity>) userService.getUsersView(1000,0,new UserviewEntity());
+            List<UserviewEntity> userviewEntityList = (List<UserviewEntity>) userService.getUsersView(1000,0,userviewEntity);
             Gson gson = new GsonBuilder()
                     .excludeFieldsWithoutExposeAnnotation()
                     .create();

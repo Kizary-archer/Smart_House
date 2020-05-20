@@ -1,40 +1,23 @@
 package app.builder;
 
-import app.entityes.ClientEntity;
+import app.entityes.UserviewEntity;
 
 import javax.servlet.http.HttpServletRequest;
-import java.sql.Date;
 
-public final class ClientBuilder {
-    ClientEntity clientEntity = new ClientEntity();
+public final class UserBuilder {
+    UserviewEntity userviewEntity = new UserviewEntity();
 
-    public ClientBuilder (HttpServletRequest request) {
-        if (request.getParameter("idClient") != null)
-            if(!request.getParameter("idClient").equals(""))
-                clientEntity.setIdClient(Integer.parseInt(request.getParameter("idClient")));
-        if (request.getParameter("name") != null)
-            if (!request.getParameter("name").equals(""))
-                clientEntity.setName(request.getParameter("name"));
-        if (request.getParameter("surname") != null)
-            if (!request.getParameter("surname").equals(""))
-                clientEntity.setSurname(request.getParameter("surname"));
-        if (request.getParameter("patronymic") != null)
-            if (!request.getParameter("patronymic").equals(""))
-                clientEntity.setPatronymic(request.getParameter("patronymic"));
-        if (request.getParameter("gender") != null)
-            if (!request.getParameter("gender").equals(""))
-                clientEntity.setGender(Boolean.valueOf(request.getParameter("gender")));
-        if (request.getParameter("dateOfBirth") != null)
-            if (!request.getParameter("dateOfBirth").equals(""))
-                clientEntity.setDateOfBirth(Date.valueOf(request.getParameter("dateOfBirth")));
-        if (request.getParameter("phoneNumber") != null)
-            if (!request.getParameter("phoneNumber").equals(""))
-                clientEntity.setPhoneNumber((request.getParameter("phoneNumber")));
-        if (request.getParameter("email") != null)
-            if (!request.getParameter("email").equals(""))
-                clientEntity.setEmail((request.getParameter("email")));
+    public UserBuilder(HttpServletRequest request) {
+        if ((request.getParameter("idUser") != null)&(!request.getParameter("idUser").equals("")))
+                userviewEntity.setIdUser(Long.valueOf(request.getParameter("idUser")));
+        if ((request.getParameter("login") != null)&(!request.getParameter("login").equals("")))
+                userviewEntity.setLogin(request.getParameter("login"));
+        if ((request.getParameter("statusName") != null)&(!request.getParameter("statusName").equals("")))
+            userviewEntity.setStatusName(request.getParameter("statusName"));
+        if ((request.getParameter("nameRole") != null)&(!request.getParameter("nameRole").equals("")))
+            userviewEntity.setNameRole(request.getParameter("nameRole"));
     }
-    public ClientEntity build() {
-        return clientEntity;
+    public UserviewEntity build() {
+        return userviewEntity;
     }
 }

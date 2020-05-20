@@ -16,7 +16,7 @@
             <div class="card-body">
                 <div class="m-3" >
                     <form method="post" id = "formUserView">
-                        <h2>Список Пользователей</h2>
+                        <h2>Сортировка пользователей</h2>
                         <div class="form-row">
                             <div class="form-group col-md-3">
                                 <label for="login">Логин</label>
@@ -38,7 +38,7 @@
                                 <input type="text" class="form-control" id="idUser" name="idUser">
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary m-2" >Найти</button>
+                        <button type="submit" class="btn btn-primary m-2" id="btnUserFilter">Найти</button>
                     </form>
                 </div>
                 <table id="DTUserView" class="display">
@@ -59,12 +59,13 @@
         <div class="card-header bg-success" id="headingTwo"  data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
             <h5 class="mb-0">
                 <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Покупатель
+                    Список пользовательских ролей
                 </button>
             </h5>
         </div>
         <div id="collapseTwo" class="collapse multi-collapse" aria-labelledby="headingTwo" data-parent="#accordion">
             <div class="card-body">
+
                 <table id="DTClient" class="display">
                     <thead>
                     <tr>
