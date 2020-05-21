@@ -4,6 +4,7 @@ import app.DAO.DAOinterfaces.ControllersDAO;
 import app.DAO.DAOinterfaces.JournalErrorDAO;
 import app.entityes.ControllersEntity;
 import app.entityes.JournalErrorEntity;
+import app.entityes.JournalErrorViewEntity;
 import app.entityes.JournalEventEntity;
 import org.hibernate.Session;
 
@@ -47,6 +48,57 @@ public class JournalErrorDAOImpl implements JournalErrorDAO {
             }
             if(journalErrorEntity.getDescription() != null){
                 p.add(criteriaBuilder.like(root.get("description"),journalErrorEntity.getDescription()));
+            }
+            if(!p.isEmpty()) {
+                Predicate[] pr = new Predicate[p.size()];
+                p.toArray(pr);
+                criteriaBuilderQuery.where((pr));
+            }
+            Query query = session.createQuery(criteriaBuilderQuery);
+            if(limit != 0) query.setMaxResults(limit);
+            query.setFirstResult(offset);
+            List res = query.getResultList();
+            session.getTransaction().commit();
+            return res;
+        } catch (Exception e) {
+            System.out.println(e);
+            return null;
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+    }
+
+    @Override
+    public Collection<JournalErrorViewEntity> getJournalErrorView(int limit, int offset, JournalErrorViewEntity journalErrorViewEntity) {
+        Session session = null;
+        try {
+            session = getSession();
+            session.beginTransaction();
+            CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
+            CriteriaQuery<JournalErrorViewEntity> criteriaBuilderQuery = criteriaBuilder.createQuery(JournalErrorViewEntity.class);
+            Root<JournalErrorViewEntity> root = criteriaBuilderQuery.from(JournalErrorViewEntity.class);
+            criteriaBuilderQuery.select(root);
+            List<Predicate> p = new ArrayList<Predicate>();
+
+            if(journalErrorViewEntity.getIdError() != null){
+                p.add(criteriaBuilder.equal(root.get("idError"),journalErrorViewEntity.getIdError()));
+            }
+            if(journalErrorViewEntity.getNameError() != null){
+                p.add(criteriaBuilder.like(root.get("nameError"),journalErrorViewEntity.getNameError()));
+            }
+            if(journalErrorViewEntity.getNameFunction() != null){
+                p.add(criteriaBuilder.like(root.get("nameFunction"),journalErrorViewEntity.getNameFunction()));
+            }
+            if(journalErrorViewEntity.getUserRequest() != null){
+                p.add(criteriaBuilder.equal(root.get("userRequest"),journalErrorViewEntity.getUserRequest()));
+            }
+            if(journalErrorViewEntity.getDateError() != null){
+                p.add(criteriaBuilder.equal(root.get("dateError"),journalErrorViewEntity.getDateError()));
+            }
+            if(journalErrorViewEntity.getDescription() != null){
+                p.add(criteriaBuilder.like(root.get("description"),journalErrorViewEntity.getDescription()));
             }
             if(!p.isEmpty()) {
                 Predicate[] pr = new Predicate[p.size()];

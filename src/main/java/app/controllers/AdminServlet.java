@@ -1,5 +1,7 @@
 package app.controllers;
 
+import app.builder.UserRoleBuilder;
+import app.entityes.UserRoleEntity;
 import app.entityes.UserviewEntity;
 import app.services.UserService;
 import com.google.gson.Gson;
@@ -27,6 +29,21 @@ public class AdminServlet extends HttpServlet {
     }
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
+
+        if(request.getServletPath().equals("/DTUserRoleView")) {
+            UserRoleEntity userRoleEntity = null;
+            try {
+                userRoleEntity = new UserRoleBuilder(request).build();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            List<UserRoleEntity> userRoleEntityList = (List<UserRoleEntity>) userRoleService.getUserRole(1000,0,userRoleEntity);
+            Gson gson = new GsonBuilder()
+                    .excludeFieldsWithoutExposeAnnotation()
+                    .create();
+            String json = gson.toJson(userRoleEntityList);
+            response.getWriter().write(json);
+        }
 
     }
 }

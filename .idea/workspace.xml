@@ -25,17 +25,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97a65637-dbef-472c-8350-68d5ef732941" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/builder/UserRoleBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/entityes/JournalErrorViewEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/entityes/JournalEventViewEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/entityes/JournalUserRequestViewEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/services/UserRoleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/DAO/DAOinterfaces/UserRoleDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/DAO/DAOinterfaces/UserRoleDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/DAO/UserRoleDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/DAO/UserRoleDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/services/JournalErrorService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/services/JournalEventService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/DAO/DAOinterfaces/JournalErrorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/DAO/DAOinterfaces/JournalErrorDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/DAO/DAOinterfaces/JournalEventDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/DAO/DAOinterfaces/JournalEventDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/DAO/JournalErrorDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/DAO/JournalErrorDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/DAO/JournalEventDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/DAO/JournalEventDAOImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/Util/DAOCreateFactoryUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Util/DAOCreateFactoryUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/UserServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/entityes/UserRoleEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entityes/UserRoleEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/AdminServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/AdminServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,23 +88,23 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ApartmentSale_kurs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.JPA/Hibernate QL" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="app.builder" />
-      <recent name="app.services" />
-      <recent name="app.DAO" />
-      <recent name="app.DAO.DAOinterfaces" />
-      <recent name="app.controllers" />
-    </key>
     <key name="ImportMappingsDialog.RecentPackages">
       <recent name="app.entityes" />
       <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="app.services" />
+      <recent name="app.builder" />
+      <recent name="app.DAO" />
+      <recent name="app.DAO.DAOinterfaces" />
+      <recent name="app.controllers" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Max\Smart_House\src\main\java\app" />
@@ -234,6 +231,7 @@
       <workItem from="1589986219678" duration="6376000" />
       <workItem from="1589998565794" duration="7007000" />
       <workItem from="1590047285719" duration="5738000" />
+      <workItem from="1590062760473" duration="7047000" />
     </task>
     <servers />
   </component>
@@ -270,10 +268,10 @@
     </state>
     <state x="137" y="17" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1582226800043" />
     <state x="160" y="20" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1589988648730" />
-    <state x="605" y="133" key="#com.intellij.ide.util.MemberChooser" timestamp="1590003932308">
+    <state x="605" y="133" key="#com.intellij.ide.util.MemberChooser" timestamp="1590065993862">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="605" y="133" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1590003932308" />
+    <state x="605" y="133" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1590065993862" />
     <state x="529" y="205" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1589741343998">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

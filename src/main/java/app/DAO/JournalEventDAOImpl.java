@@ -4,6 +4,7 @@ import app.DAO.DAOinterfaces.DevicesDAO;
 import app.DAO.DAOinterfaces.JournalEventDAO;
 import app.entityes.DevicesEntity;
 import app.entityes.JournalEventEntity;
+import app.entityes.JournalEventViewEntity;
 import org.hibernate.Session;
 
 import javax.persistence.Query;
@@ -46,6 +47,57 @@ public class JournalEventDAOImpl implements JournalEventDAO {
             }
             if(journalEventEntity.getUserRequest() != null){
                 p.add(criteriaBuilder.equal(root.get("userRequest"),journalEventEntity.getUserRequest()));
+            }
+            if(!p.isEmpty()) {
+                Predicate[] pr = new Predicate[p.size()];
+                p.toArray(pr);
+                criteriaBuilderQuery.where((pr));
+            }
+            Query query = session.createQuery(criteriaBuilderQuery);
+            if(limit != 0) query.setMaxResults(limit);
+            query.setFirstResult(offset);
+            List res = query.getResultList();
+            session.getTransaction().commit();
+            return res;
+        } catch (Exception e) {
+            System.out.println(e);
+            return null;
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+    }
+
+    @Override
+    public Collection<JournalEventViewEntity> getJournalViewEvents(int limit, int offset, JournalEventViewEntity journalEventViewEntity) {
+        Session session = null;
+        try {
+            session = getSession();
+            session.beginTransaction();
+            CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
+            CriteriaQuery<JournalEventViewEntity> criteriaBuilderQuery = criteriaBuilder.createQuery(JournalEventViewEntity.class);
+            Root<JournalEventViewEntity> root = criteriaBuilderQuery.from(JournalEventViewEntity.class);
+            criteriaBuilderQuery.select(root);
+            List<Predicate> p = new ArrayList<Predicate>();
+
+            if(journalEventViewEntity.getIdEvent() != null){
+                p.add(criteriaBuilder.equal(root.get("idEvent"),journalEventViewEntity.getIdEvent()));
+            }
+            if(journalEventViewEntity.getNameEvent() != null){
+                p.add(criteriaBuilder.equal(root.get("nameEvent"),journalEventViewEntity.getNameEvent()));
+            }
+            if(journalEventViewEntity.getNameFunction() != null){
+                p.add(criteriaBuilder.equal(root.get("nameFunction"),journalEventViewEntity.getNameFunction()));
+            }
+            if(journalEventViewEntity.getUserRequest() != null){
+                p.add(criteriaBuilder.equal(root.get("userRequest"),journalEventViewEntity.getUserRequest()));
+            }
+            if(journalEventViewEntity.getDateEvent() != null){
+                p.add(criteriaBuilder.equal(root.get("dateEvent"),journalEventViewEntity.getDateEvent()));
+            }
+            if(journalEventViewEntity.getData() != null){
+                p.add(criteriaBuilder.equal(root.get("data"),journalEventViewEntity.getData()));
             }
             if(!p.isEmpty()) {
                 Predicate[] pr = new Predicate[p.size()];
@@ -142,7 +194,6 @@ public class JournalEventDAOImpl implements JournalEventDAO {
             }
         }
     }
-
     @Override
     public JournalEventEntity getJournalEventById(int idEvent) {
         Session session = null;
