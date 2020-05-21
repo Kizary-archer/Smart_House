@@ -1,5 +1,7 @@
 package app.entityes;
 
+import com.google.gson.annotations.Expose;
+
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.Objects;
@@ -7,10 +9,15 @@ import java.util.Objects;
 @Entity
 @Table(name = "user_role", schema = "public", catalog = "Smart_house")
 public class UserRoleEntity {
+    @Expose()
     private Long idRole;
+    @Expose()
     private String nameRole;
+    @Expose()
     private String description;
+    @Expose(serialize = false, deserialize = false)
     private Collection<PermissionUserRoleEntity> permissionUserRolesByIdRole;
+    @Expose(serialize = false, deserialize = false)
     private Collection<UsersEntity> usersByIdRole;
 
     @Id

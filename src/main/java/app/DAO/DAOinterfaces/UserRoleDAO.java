@@ -11,5 +11,5 @@ public interface UserRoleDAO extends DAOMain<UserRoleEntity> {
     public Collection<UserRoleEntity> getUserRole(int limit, int offset, UserRoleEntity userRoleEntity);
     public UserRoleEntity getPermissionUserRolesByIdRole(int idRole);
     public UserRoleEntity getUsersByIdRole(int idRole);
-    public UserRoleEntity getUserById(int idRole);
+    public UserRoleEntity getUserRoleById(int idRole);
 }

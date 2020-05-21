@@ -1,7 +1,10 @@
 package app.controllers;
 
 import app.builder.UserBuilder;
+import app.builder.UserRoleBuilder;
+import app.entityes.UserRoleEntity;
 import app.entityes.UserviewEntity;
+import app.services.UserRoleService;
 import app.services.UserService;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -14,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(urlPatterns = {"/DTUserView"})
+@WebServlet(urlPatterns = {"/DTUserView","/DTUserRoleView"})
 public class UserServlet extends HttpServlet {
 
     @Override
@@ -39,18 +42,35 @@ public class UserServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
         UserService userService = new UserService();
-        UserviewEntity userviewEntity = null;
-        try {
-            userviewEntity = new UserBuilder(request).build();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        UserRoleService userRoleService = new UserRoleService();
+
         if(request.getServletPath().equals("/DTUserView")) {
+            UserviewEntity userviewEntity = null;
+            try {
+                userviewEntity = new UserBuilder(request).build();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             List<UserviewEntity> userviewEntityList = (List<UserviewEntity>) userService.getUsersView(1000,0,userviewEntity);
             Gson gson = new GsonBuilder()
                     .excludeFieldsWithoutExposeAnnotation()
                     .create();
             String json = gson.toJson(userviewEntityList);
+            response.getWriter().write(json);
+        }
+
+        if(request.getServletPath().equals("/DTUserRoleView")) {
+            UserRoleEntity userRoleEntity = null;
+            try {
+                userRoleEntity = new UserRoleBuilder(request).build();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            List<UserRoleEntity> userRoleEntityList = (List<UserRoleEntity>) userRoleService.getUserRole(1000,0,userRoleEntity);
+            Gson gson = new GsonBuilder()
+                    .excludeFieldsWithoutExposeAnnotation()
+                    .create();
+            String json = gson.toJson(userRoleEntityList);
             response.getWriter().write(json);
         }
        /*if(request.getServletPath().equals("/addApartment")) {

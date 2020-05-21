@@ -16,7 +16,7 @@ import java.util.Collection;
 import java.util.List;
 
 public class UserRoleDAOImpl implements UserRoleDAO {
- 
+
     @Override
     public Collection<UserRoleEntity> getUserRole(int limit, int offset, UserRoleEntity userRoleEntity) {
         Session session = null;
@@ -111,7 +111,7 @@ public class UserRoleDAOImpl implements UserRoleDAO {
     }
 
     @Override
-    public UserRoleEntity getUserById(int idRole) {
+    public UserRoleEntity getUserRoleById(int idRole) {
         Session session = null;
         try {
             session = getSession();
