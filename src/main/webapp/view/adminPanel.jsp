@@ -65,18 +65,28 @@
         </div>
         <div id="collapseTwo" class="collapse multi-collapse" aria-labelledby="headingTwo" data-parent="#accordion">
             <div class="card-body">
-
-                <table id="DTClient" class="display">
+                <div class="m-3" >
+                    <form method="post" id = "formUserRole">
+                        <h2>Сортировка пользовательских ролей</h2>
+                        <div class="form-row">
+                            <div class="form-group col-md-2">
+                                <label for="idRole">Id роли</label>
+                                <input type="text" class="form-control" id="idRole" name="idRole">
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label for="RnameRole">Имя роли</label>
+                                <input type="text" class="form-control" id="RnameRole" name="RnameRole">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary m-2" id="btnUserRoleFilter">Найти</button>
+                    </form>
+                </div>
+                <table id="DTUserRoleView" class="display">
                     <thead>
                     <tr>
                         <th>id</th>
-                        <th>Имя</th>
-                        <th>Фамилия</th>
-                        <th>Отчество</th>
-                        <th>Дата рождения</th>
-                        <th>Телефон</th>
-                        <th>Email</th>
-                        <th>Пол</th>
+                        <th>Имя роли</th>
+                        <th>Описание</th>
                     </tr>
                     </thead>
                 </table>
@@ -87,55 +97,51 @@
         <div class="card-header bg-info" id="headingThree"  data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
             <h5 class="mb-0">
                 <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Агент
+                    Список событий
                 </button>
             </h5>
         </div>
         <div id="collapseThree" class="collapse multi-collapse" aria-labelledby="headingThree" data-parent="#accordion">
             <div class="card-body">
-                <div class="w-50 m-3" >
-                    <form method="post" id = "formAgent">
-                        <h2>Список агентов</h2>
+                <div class="m-3" >
+                    <form method="post" id = "formJournalEventView">
+                        <h2>Сортировка списка событий</h2>
                         <div class="form-row">
-                            <div class="form-group col-md-4">
-                                <label for="Aname">Имя</label>
-                                <input type="text" class="form-control" id="Aname" name="Aname">
+                            <div class="form-group col-md-1">
+                                <label for="idEvent">Id события</label>
+                                <input type="text" class="form-control" id="idEvent" name="idEvent">
                             </div>
-                            <div class="form-group col-md-4">
-                                <label for="Asurname">Фамилия</label>
-                                <input type="text" class="form-control" id="Asurname" name="Asurname">
+                            <div class="form-group col-md-2">
+                                <label for="nameEvent">Имя события</label>
+                                <input type="text" class="form-control" id="nameEvent" name="nameEvent">
                             </div>
-                            <div class="form-group col-md-6">
-                                <label for="Apatronymic">Отчество</label>
-                                <input type="text" class="form-control" id="Apatronymic" name="Apatronymic">
+                            <div class="form-group col-md-2">
+                                <label for="nameFunction">Имя функции</label>
+                                <input type="text" class="form-control" id="nameFunction" name="nameFunction">
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="form-group col-md-4">
-                                <label for="Apercent">Процент с продаж</label>
-                                <input type="text" class="form-control" id="Apercent" name="Apercent">
+                            <div class="form-group col-md-2">
+                                <label for="userRequest">Id пользователя</label>
+                                <input type="text" class="form-control" id="userRequest" name="userRequest">
                             </div>
-                            <div class="form-group col-md-4">
-                                <label for="AphoneNumber">Телефон</label>
-                                <input type="text" class="form-control" id="AphoneNumber" name="AphoneNumber">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label for="idAgent">id Агента</label>
-                                <input type="text" class="form-control" id="idAgent" name="idAgent">
+                            <div class="form-group col-md-2">
+                                <label for="dataEvent">Данные</label>
+                                <input type="text" class="form-control" id="dataEvent" name="dataEvent">
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary m-2" >Найти</button>
+                        <button type="submit" class="btn btn-primary m-2" id="btnJournalEventFilter">Найти</button>
                     </form>
                 </div>
-                <table id="DTAgent" class="display">
+                <table id="DTJournalEventView" class="display">
                     <thead>
                     <tr>
-                        <th>id</th>
-                        <th>Имя</th>
-                        <th>Фамилия</th>
-                        <th>Отчество</th>
-                        <th>Процент</th>
-                        <th>Телефон</th>
+                        <th>Id события</th>
+                        <th>Имя события</th>
+                        <th>Имя функции</th>
+                        <th>Id пользователя</th>
+                        <th>Дата события</th>
+                        <th>Данные</th>
                     </tr>
                     </thead>
                 </table>

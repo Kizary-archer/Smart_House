@@ -8,13 +8,13 @@ public final class UserBuilder {
     UserviewEntity userviewEntity = new UserviewEntity();
 
     public UserBuilder(HttpServletRequest request) {
-        if ((request.getParameter("idUser") != null)&(!request.getParameter("idUser").equals("")))
+        if ((request.getParameter("idUser") != null)&&(!request.getParameter("idUser").equals("")))
                 userviewEntity.setIdUser(Long.valueOf(request.getParameter("idUser")));
-        if ((request.getParameter("login") != null)&(!request.getParameter("login").equals("")))
+        if ((request.getParameter("login") != null)&&(!request.getParameter("login").equals("")))
                 userviewEntity.setLogin(request.getParameter("login"));
-        if ((request.getParameter("statusName") != null)&(!request.getParameter("statusName").equals("")))
+        if ((request.getParameter("statusName") != null)&&(!request.getParameter("statusName").equals("")))
             userviewEntity.setStatusName(request.getParameter("statusName"));
-        if ((request.getParameter("nameRole") != null)&(!request.getParameter("nameRole").equals("")))
+        if ((request.getParameter("nameRole") != null)&&(!request.getParameter("nameRole").equals("")))
             userviewEntity.setNameRole(request.getParameter("nameRole"));
     }
     public UserviewEntity build() {

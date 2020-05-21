@@ -9,11 +9,11 @@ public final class UserRoleBuilder {
     UserRoleEntity userRoleEntity = new UserRoleEntity();
 
     public UserRoleBuilder(HttpServletRequest request) {
-        if ((request.getParameter("idRole") != null)&(!request.getParameter("idRole").equals("")))
+        if ((request.getParameter("idRole") != null)&&(!request.getParameter("idRole").equals("")))
                 userRoleEntity.setIdRole(Long.valueOf(request.getParameter("idRole")));
-        if ((request.getParameter("nameRole") != null)&(!request.getParameter("nameRole").equals("")))
+        if ((request.getParameter("nameRole") != null)&&(!request.getParameter("nameRole").equals("")))
                 userRoleEntity.setNameRole(request.getParameter("nameRole"));
-        if ((request.getParameter("description") != null)&(!request.getParameter("description").equals("")))
+        if ((request.getParameter("description") != null)&&(!request.getParameter("description").equals("")))
             userRoleEntity.setDescription(request.getParameter("description"));
     }
     public UserRoleEntity build() {

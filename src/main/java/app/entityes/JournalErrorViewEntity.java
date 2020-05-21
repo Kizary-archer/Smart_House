@@ -1,5 +1,7 @@
 package app.entityes;
 
+import com.google.gson.annotations.Expose;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Objects;
@@ -7,11 +9,17 @@ import java.util.Objects;
 @Entity
 @Table(name = "journal_error_view", schema = "public", catalog = "Smart_house")
 public class JournalErrorViewEntity {
+    @Expose()
     private Long idError;
+    @Expose()
     private String nameError;
+    @Expose()
     private String nameFunction;
+    @Expose()
     private Long userRequest;
+    @Expose()
     private Timestamp dateError;
+    @Expose()
     private String description;
 
     @Id
