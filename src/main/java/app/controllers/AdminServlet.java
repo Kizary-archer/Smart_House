@@ -22,7 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(urlPatterns = {"/admin","/DTJournalEventView"})
+@WebServlet(urlPatterns = {"/admin","/DTJournalEventView","/DTJournalErrorView"})
 public class AdminServlet extends HttpServlet {
 
     @Override

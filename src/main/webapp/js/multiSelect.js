@@ -9,7 +9,9 @@ $(document).ready( function () {
     $('#headingThree').on('click',function(event){
         $("#btnJournalEventFilter").click();
     });
-
+    $('#headingFour').on('click',function(event){
+        $("#btnJournalErrorFilter").click();
+    });
     //////////////////////
     $("#formUserView").submit(function(event) {
         event.preventDefault();
@@ -115,4 +117,39 @@ $(document).ready( function () {
         });
     });
     //////////////////////////////////////////////////////
+    $("#formJournalErrorView").submit(function(event){
+        event.preventDefault();
+        const table = $('#DTJournalErrorView').DataTable({
+            destroy: true,
+            'ajax': {
+                'type': 'POST',
+                'url': './DTJournalErrorView',
+                "dataSrc": "",
+                "data": function (d) {
+                    d.idError = $('#idError').val();
+                    d.nameError = $('#nameError').val();
+                    d.nameFunction = $('#nameFunctionEr').val();
+                    d.userRequest = $('#userRequestEr').val();
+                }
+            },
+            "columns": [
+                {"data": "idError"},
+                {"data": "nameError"},
+                {"data": "nameFunction"},
+                {"data": "userRequest"},
+                {"data": "dateError"},
+                {"data": "description"}
+            ]
+        });
+        $('#DTJournalErrorView tbody').on('click', 'tr', function () {
+
+            if ( $(this).hasClass('selected') ) {
+                $(this).removeClass('selected');
+            }
+            else {
+                table.$('tr.selected').removeClass('selected');
+                $(this).addClass('selected');
+            }
+        });
+    });
 });
