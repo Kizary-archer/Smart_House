@@ -11,7 +11,6 @@
                 </button>
             </h5>
         </div>
-
         <div id="collapseOne" class="collapse multi-collapse" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="card-body">
                 <div class="m-3" >
@@ -39,6 +38,7 @@
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary m-2" id="btnUserFilter">Найти</button>
+                        <a href="./admin/addUser" type="button" class="btn btn-primary m-2" id="btnUserAdd">Добавить</a>
                     </form>
                 </div>
                 <table id="DTUserView" class="display">

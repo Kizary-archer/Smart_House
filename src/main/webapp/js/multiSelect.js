@@ -38,14 +38,8 @@ $(document).ready( function () {
             ]
         });
         $('#DTUserView tbody').on('click', 'tr', function () {
-
-            if ( $(this).hasClass('selected') ) {
-                $(this).removeClass('selected');
-            }
-            else {
-                table.$('tr.selected').removeClass('selected');
-                $(this).addClass('selected');
-            }
+            var data = table.row( this ).data();
+            document.location = './viewAgent?User=' + data.idUser;
         });
     });
     ////////////////////////////////

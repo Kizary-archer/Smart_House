@@ -1,6 +1,7 @@
 package app.DAO;
 
 import app.DAO.DAOinterfaces.UserDAO;
+import app.entityes.UserStatusEntity;
 import app.entityes.UsersEntity;
 import app.entityes.UserviewEntity;
 import org.hibernate.Session;
@@ -101,6 +102,27 @@ public class UserDAOImpl implements UserDAO {
             if(limit != 0) query.setMaxResults(limit);
             query.setFirstResult(offset);
             List res = query.getResultList();
+            session.getTransaction().commit();
+            return res;
+        } catch (Exception e) {
+            System.out.println(e);
+            return null;
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+    }
+
+    @Override
+    public Collection<UserStatusEntity> getUserStatus() {
+        Session session = null;
+        try {
+            session = getSession();
+            session.beginTransaction();
+            String hql = "from UserStatusEntity ";
+            Query query =  session.createQuery(hql);
+            Collection<UserStatusEntity> res = query.getResultList();
             session.getTransaction().commit();
             return res;
         } catch (Exception e) {
