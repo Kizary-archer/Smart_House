@@ -4,6 +4,8 @@ import app.entityes.UsersEntity;
 import app.entityes.UserviewEntity;
 
 import javax.servlet.http.HttpServletRequest;
+import java.sql.Date;
+import java.sql.Timestamp;
 
 public final class UserBuilder {
     UsersEntity usersEntity = new UsersEntity();

@@ -62,7 +62,7 @@ public class UsersEntity {
     }
 
     @Basic
-    @Column(name = "registration_date", nullable = false)
+    @Column(name = "registration_date")
     public Timestamp getRegistrationDate() {
         return registrationDate;
     }

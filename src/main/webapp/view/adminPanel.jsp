@@ -38,7 +38,7 @@
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary m-2" id="btnUserFilter">Найти</button>
-                        <a href="./admin/addUser" type="button" class="btn btn-primary m-2" id="btnUserAdd">Добавить</a>
+                        <a href="./addUser" type="button" class="btn btn-primary m-2" id="btnUserAdd">Добавить</a>
                     </form>
                 </div>
                 <table id="DTUserView" class="display">

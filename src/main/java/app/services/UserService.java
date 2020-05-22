@@ -18,6 +18,7 @@ public class UserService {
     }
     public boolean updUser(UsersEntity usersEntity){
         UserDAO userDAO = DAOCreateFactoryUtil.getInstance().getUserDAO();
+        usersEntity.setRegistrationDate(new Timestamp(System.currentTimeMillis()));
         return  userDAO.update(usersEntity);
     }
     public UsersEntity getUserById(Long idUser){

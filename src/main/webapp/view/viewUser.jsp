@@ -10,17 +10,15 @@
                     <label for="login">Логин</label>
                     <input type="text" class="form-control" id="login" name="login" value=${user.login}>
                 </div>
+                <div class="form-group col-md-2">
+                    <label for="idUser">ID</label>
+                    <input readonly type="idUser" class="form-control" id="idUser" name="idUser" value=${user.idUser}>
+                </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="password">Пароль</label>
                     <input type="password" class="form-control" id="password" name="password" value=${user.password}>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="registrationDate">Логин</label>
-                    <input type="text" class="form-control" id="registrationDate" name="registrationDate" value=${user.registrationDate}>
                 </div>
             </div>
                 <div class="form-row">
@@ -45,19 +43,29 @@
                     </select>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary" formaction="./addUser">Добавить</button>
+            <button type="submit" class="btn btn-primary m-2" formaction="./updUser">Обновить</button>
+            <button type="submit" class="btn btn-danger m-2" formaction="./delUser">Удалить</button>
+            <button type="reset" class="btn btn-warning m-2">Отменить</button>
         </form>
-        <c:if test="${isUserAdded == true}">
+        <c:if test="${isUserupd == true}">
             <div class="alert alert-success alert-dismissible fade show col-md-8" role="alert">
-                <strong>Пользователь добавлен</strong>
+                <strong>Данные пользователя обновлены</strong>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
         </c:if>
-        <c:if test="${isUserAdded == false}">
+        <c:if test="${isUserupd == false}">
             <div class="alert alert-danger alert-dismissible fade show col-md-8" role="alert">
-                <strong>Пользователь не добавлен</strong> Проверьте вводимые значения
+                <strong>Данные пользователя не обновлены</strong> Проверьте вводимые значения
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </c:if>
+        <c:if test="${isUserdel == false}">
+            <div class="alert alert-danger alert-dismissible fade show col-md-8" role="alert">
+                <strong>Пользователь не удалён</strong> Проверьте вводимые значения
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

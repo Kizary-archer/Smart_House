@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(urlPatterns = {"/DTUserView","/DTUserRoleView","/admin/addUser","/viewUser","/delUser","/updUser"})
+@WebServlet(urlPatterns = {"/DTUserView","/DTUserRoleView","/addUser","/viewUser","/delUser","/updUser"})
 public class UserServlet extends HttpServlet {
 
     @Override
@@ -33,8 +33,8 @@ public class UserServlet extends HttpServlet {
         List<UserStatusEntity> userStatusEntityList = (List<UserStatusEntity>) userService.getUserStatus();
         request.setAttribute("roles",userRoleEntityList);
         request.setAttribute("statuses",userStatusEntityList);
-       if(request.getServletPath().equals("/admin/addUser")) {
-           requestDispatcher = request.getRequestDispatcher("/view/addUser.jsp");
+       if(request.getServletPath().equals("/addUser")) {
+           requestDispatcher = request.getRequestDispatcher("view/addUser.jsp");
        }else {
             UsersEntity usersEntity = userService.getUserById(Long.valueOf(request.getParameter("idUser")));
             request.setAttribute("user", usersEntity);
@@ -83,61 +83,32 @@ public class UserServlet extends HttpServlet {
             String json = gson.toJson(userRoleEntityList);
             response.getWriter().write(json);
         }
-
-       if(request.getServletPath().equals("/admin/addUser")) {
+/////CRUD////////
+       if(request.getServletPath().equals("/addUser")) {
            if (userService.addUser(usersEntity)) {
                request.setAttribute("isUserAdded", "true");
            }
            else request.setAttribute("isUserAdded", "false");
            doGet(request, response);
         }
-/*
-        if(request.getServletPath().equals("/searchHouse")) {
-            HouseView houseView = null;
-            try {
-                houseView = new HouseViewBuilder(request).build();
-            } catch (Exception e) {
-                e.printStackTrace();
+        if(request.getServletPath().equals("/updUser")) {
+            if (userService.updUser(usersEntity)) {
+                request.setAttribute("isUserupd", "true");
             }
-            List<HouseView> houseEntityList = (List<HouseView>) apartmentService.getHouses(1000,0,houseView);
-            String json = new Gson().toJson(houseEntityList);
-            response.getWriter().write(json);
+            else request.setAttribute("isUserupd", "false");
+            doGet(request, response);
         }
-
-        if(request.getServletPath().equals("/DTApart")) {
-            List<ApartmentEntity> apartmentEntityList = (List<ApartmentEntity>) apartmentService.getApartmentsList(1000,0,apartmentEntity);
-            Gson gson = new GsonBuilder()
-                                        .excludeFieldsWithoutExposeAnnotation()
-                                        .create();
-            String json = gson.toJson(apartmentEntityList);
-            response.getWriter().write(json);
-        }
-
-        if(request.getServletPath().equals("/updApartment")) {
-            if (apartmentService.updApartment(apartmentEntity)) {
-                request.setAttribute("isApartmentUpd", "true");
-            }
-            else {
-                request.setAttribute("isApartmentUpd", "false");
-            }
-            doGet(request,response);
-        }
-        if(request.getServletPath().equals("/delApartment")) {
-            if (apartmentService.delApartment(apartmentEntity)) {
-                request.setAttribute("isApartmentdel", "true");
+        if(request.getServletPath().equals("/delUser")) {
+            if (userService.delUser(usersEntity)) {
+                request.setAttribute("isUserdel", "true");
                 RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
                 requestDispatcher.forward(request, response);
             }
-            else {
-                request.setAttribute("isApartmentdel", "false");
-                doGet(request, response);
-            }
-        }
-        if(request.getServletPath().equals("/listApartments")) {
-            List<ApartmentEntity> apartmentEntityList = new ArrayList<ApartmentEntity>(apartmentService.getApartmentsList(1000, 0,apartmentEntity));
-            request.setAttribute("apartments",apartmentEntityList);
+            else request.setAttribute("isUserdel", "false");
             doGet(request, response);
-        }*/
+        }
+/////////////////////
+
     }
 }
 
