@@ -202,6 +202,6 @@
 </div>
 </body>
 <script type="text/javascript" charset="utf8">
-    <%@include file='./../js/multiSelect.js' %>
+    <%@include file='./../js/multiSelectAdmin.js' %>
 </script>
 </html>
