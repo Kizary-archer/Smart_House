@@ -19,7 +19,7 @@ public class UserRoleService {
         UserRoleDAO userRoleDAO = DAOCreateFactoryUtil.getInstance().getUserRoleDAO();
         return  userRoleDAO.update(userRoleEntity);
     }
-    public UserRoleEntity getUserById(int idRole){
+    public UserRoleEntity getUserById(Long idRole){
         UserRoleDAO userRoleDAO = DAOCreateFactoryUtil.getInstance().getUserRoleDAO();
         return  userRoleDAO.getUserRoleById(idRole);
     }
@@ -32,11 +32,11 @@ public class UserRoleService {
         UserRoleDAO userRoleDAO = DAOCreateFactoryUtil.getInstance().getUserRoleDAO();
         return  userRoleDAO.getUserRole(limit,offset,userRoleEntity);
     }
-    public UserRoleEntity getPermissionUserRolesByIdRole(int idRole){
+    public UserRoleEntity getPermissionUserRolesByIdRole(Long idRole){
         UserRoleDAO userRoleDAO = DAOCreateFactoryUtil.getInstance().getUserRoleDAO();
         return  userRoleDAO.getPermissionUserRolesByIdRole(idRole);
     }
-    public UserRoleEntity getUsersByIdRole(int idRole){
+    public UserRoleEntity getUsersByIdRole(Long idRole){
         UserRoleDAO userRoleDAO = DAOCreateFactoryUtil.getInstance().getUserRoleDAO();
         return  userRoleDAO.getUsersByIdRole(idRole);
     }

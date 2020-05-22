@@ -27,7 +27,7 @@ public class JournalEventService {
         JournalEventDAO journalEventDAO = DAOCreateFactoryUtil.getInstance().getJournalEventDAO();
         return  journalEventDAO.update(journalEventEntity);
     }
-    public JournalEventEntity getJournalEventById(int idEvent){
+    public JournalEventEntity getJournalEventById(Long idEvent){
         JournalEventDAO journalEventDAO = DAOCreateFactoryUtil.getInstance().getJournalEventDAO();
         return  journalEventDAO.getJournalEventById(idEvent);
     }
@@ -35,15 +35,15 @@ public class JournalEventService {
         JournalEventDAO journalEventDAO = DAOCreateFactoryUtil.getInstance().getJournalEventDAO();
         return  journalEventDAO.delete(journalEventEntity);
     }
-    public JournalEventEntity getTypeEventByTypeEvent(int idEvent){
+    public JournalEventEntity getTypeEventByTypeEvent(Long idEvent){
         JournalEventDAO journalEventDAO = DAOCreateFactoryUtil.getInstance().getJournalEventDAO();
         return  journalEventDAO.getTypeEventByTypeEvent(idEvent);
     }
-    public JournalEventEntity getFunctionDevicesByFunctionDevices(int idEvent){
+    public JournalEventEntity getFunctionDevicesByFunctionDevices(Long idEvent){
         JournalEventDAO journalEventDAO = DAOCreateFactoryUtil.getInstance().getJournalEventDAO();
         return  journalEventDAO.getFunctionDevicesByFunctionDevices(idEvent);
     }
-    public JournalEventEntity getJournalUserRequestByUserRequest(int idEvent){
+    public JournalEventEntity getJournalUserRequestByUserRequest(Long idEvent){
         JournalEventDAO journalEventDAO = DAOCreateFactoryUtil.getInstance().getJournalEventDAO();
         return  journalEventDAO.getJournalUserRequestByUserRequest(idEvent);
     }

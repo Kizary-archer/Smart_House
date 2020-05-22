@@ -10,8 +10,8 @@ public interface JournalEventDAO extends DAOMain<JournalEventEntity> {
 
     public Collection<JournalEventEntity> getJournalEvents(int limit, int offset, JournalEventEntity journalEventEntity);
     public Collection<JournalEventViewEntity> getJournalViewEvents(int limit, int offset, JournalEventViewEntity journalEventViewEntity);
-    public JournalEventEntity getTypeEventByTypeEvent(int idEvent);
-    public JournalEventEntity getFunctionDevicesByFunctionDevices(int idEvent);
-    public JournalEventEntity getJournalUserRequestByUserRequest(int idEvent);
-    public JournalEventEntity getJournalEventById(int idEvent);
+    public JournalEventEntity getTypeEventByTypeEvent(Long idEvent);
+    public JournalEventEntity getFunctionDevicesByFunctionDevices(Long idEvent);
+    public JournalEventEntity getJournalUserRequestByUserRequest(Long idEvent);
+    public JournalEventEntity getJournalEventById(Long idEvent);
 }

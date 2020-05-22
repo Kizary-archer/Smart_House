@@ -136,7 +136,7 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public UsersEntity getControllersByIdUser(int idUser) {
+    public UsersEntity getControllersByIdUser(Long idUser) {
         Session session = null;
         try {
             session = getSession();
@@ -161,7 +161,7 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public UsersEntity getGroupFunctionsByIdUser(int idUser) {
+    public UsersEntity getGroupFunctionsByIdUser(Long idUser) {
         Session session = null;
         try {
             session = getSession();
@@ -186,7 +186,7 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public UsersEntity getJournalUserRequestsByIdUser(int idUser) {
+    public UsersEntity getJournalUserRequestsByIdUser(Long idUser) {
         Session session = null;
         try {
             session = getSession();
@@ -211,7 +211,7 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public UsersEntity getUserRoleByRole(int idUser) {
+    public UsersEntity getUserRoleByRole(Long idUser) {
         Session session = null;
         try {
             session = getSession();
@@ -236,7 +236,7 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public UsersEntity getUserStatusByStatus(int idUser) {
+    public UsersEntity getUserStatusByStatus(Long idUser) {
         Session session = null;
         try {
             session = getSession();
@@ -261,7 +261,7 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public UsersEntity getUserById(int idUser) {
+    public UsersEntity getUserById(Long idUser) {
         Session session = null;
         try {
             session = getSession();
@@ -283,7 +283,7 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public UsersEntity getUserAllChild(int idUser) {
+    public UsersEntity getUserAllChild(Long idUser) {
         Session session = null;
         UsersEntity res;
         try {

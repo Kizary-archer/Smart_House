@@ -8,12 +8,12 @@ import java.util.Collection;
 public interface FunctionDevicesDAO extends DAOMain<FunctionDevicesEntity> {
 
     public Collection<FunctionDevicesEntity> getDevices(int limit, int offset, FunctionDevicesEntity functionDevicesEntity);
-    public FunctionDevicesEntity getDevicesByDevice(int idFunction);
-    public FunctionDevicesEntity getTypeFunctionByTypeFunction(int idFunction);
-    public FunctionDevicesEntity getFunctionsGroupsByIdFunction(int idFunction);
-    public FunctionDevicesEntity getJournalErrorsByIdFunction(int idFunction);
-    public FunctionDevicesEntity getJournalEventsByIdFunction(int idFunction);
-    public FunctionDevicesEntity getFunctionById(int idFunction);
+    public FunctionDevicesEntity getDevicesByDevice(Long idFunction);
+    public FunctionDevicesEntity getTypeFunctionByTypeFunction(Long idFunction);
+    public FunctionDevicesEntity getFunctionsGroupsByIdFunction(Long idFunction);
+    public FunctionDevicesEntity getJournalErrorsByIdFunction(Long idFunction);
+    public FunctionDevicesEntity getJournalEventsByIdFunction(Long idFunction);
+    public FunctionDevicesEntity getFunctionById(Long idFunction);
 
 
 }

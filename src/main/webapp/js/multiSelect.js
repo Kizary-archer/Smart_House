@@ -39,7 +39,7 @@ $(document).ready( function () {
         });
         $('#DTUserView tbody').on('click', 'tr', function () {
             var data = table.row( this ).data();
-            document.location = './viewAgent?User=' + data.idUser;
+            document.location = './viewUser?idUser=' + data.idUser;
         });
     });
     ////////////////////////////////

@@ -8,11 +8,11 @@ import java.util.Collection;
 public interface DevicesDAO extends DAOMain<DevicesEntity> {
 
     public Collection<DevicesEntity> getDevices(int limit, int offset, DevicesEntity devicesEntity);
-    public DevicesEntity getControllersByController(int idDevice);
-    public DevicesEntity getTypeDevicesByTypeDevice(int idDevice);
-    public DevicesEntity getWorkStatusByWorkStatus(int idDevice);
-    public DevicesEntity getFunctionDevicesByIdDevice(int idDevice);
-    public DevicesEntity getDeviceById(int idDevice);
+    public DevicesEntity getControllersByController(Long idDevice);
+    public DevicesEntity getTypeDevicesByTypeDevice(Long idDevice);
+    public DevicesEntity getWorkStatusByWorkStatus(Long idDevice);
+    public DevicesEntity getFunctionDevicesByIdDevice(Long idDevice);
+    public DevicesEntity getDeviceById(Long idDevice);
 
 
 }

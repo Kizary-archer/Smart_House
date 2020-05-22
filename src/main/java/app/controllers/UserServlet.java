@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(urlPatterns = {"/DTUserView","/DTUserRoleView","/admin/addUser"})
+@WebServlet(urlPatterns = {"/DTUserView","/DTUserRoleView","/admin/addUser","/viewUser","/delUser","/updUser"})
 public class UserServlet extends HttpServlet {
 
     @Override
@@ -29,14 +29,19 @@ public class UserServlet extends HttpServlet {
         RequestDispatcher requestDispatcher = null;
         UserRoleService userRoleService = new UserRoleService();
         UserService userService = new UserService();
+        List<UserRoleEntity> userRoleEntityList = (List<UserRoleEntity>) userRoleService.getUserRole(0,0,new UserRoleEntity());
+        List<UserStatusEntity> userStatusEntityList = (List<UserStatusEntity>) userService.getUserStatus();
+        request.setAttribute("roles",userRoleEntityList);
+        request.setAttribute("statuses",userStatusEntityList);
        if(request.getServletPath().equals("/admin/addUser")) {
-           List<UserRoleEntity> userRoleEntityList = (List<UserRoleEntity>) userRoleService.getUserRole(0,0,new UserRoleEntity());
-           List<UserStatusEntity> userStatusEntityList = (List<UserStatusEntity>) userService.getUserStatus();
-            request.setAttribute("roles",userRoleEntityList);
-            request.setAttribute("statuses",userStatusEntityList);
            requestDispatcher = request.getRequestDispatcher("/view/addUser.jsp");
-           requestDispatcher.forward(request, response);
-       }
+       }else {
+            UsersEntity usersEntity = userService.getUserById(Long.valueOf(request.getParameter("idUser")));
+            request.setAttribute("user", usersEntity);
+            requestDispatcher = request.getRequestDispatcher("view/viewUser.jsp");
+        }
+        assert requestDispatcher != null;
+        requestDispatcher.forward(request, response);
     }
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {

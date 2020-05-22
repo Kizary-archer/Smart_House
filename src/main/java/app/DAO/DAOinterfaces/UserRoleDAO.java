@@ -9,7 +9,7 @@ import java.util.Collection;
 public interface UserRoleDAO extends DAOMain<UserRoleEntity> {
 
     public Collection<UserRoleEntity> getUserRole(int limit, int offset, UserRoleEntity userRoleEntity);
-    public UserRoleEntity getPermissionUserRolesByIdRole(int idRole);
-    public UserRoleEntity getUsersByIdRole(int idRole);
-    public UserRoleEntity getUserRoleById(int idRole);
+    public UserRoleEntity getPermissionUserRolesByIdRole(Long idRole);
+    public UserRoleEntity getUsersByIdRole(Long idRole);
+    public UserRoleEntity getUserRoleById(Long idRole);
 }

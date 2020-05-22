@@ -121,7 +121,7 @@ public class JournalEventDAOImpl implements JournalEventDAO {
     }
 
     @Override
-    public JournalEventEntity getTypeEventByTypeEvent(int idEvent) {
+    public JournalEventEntity getTypeEventByTypeEvent(Long idEvent) {
         Session session = null;
         try {
             session = getSession();
@@ -146,7 +146,7 @@ public class JournalEventDAOImpl implements JournalEventDAO {
     }
 
     @Override
-    public JournalEventEntity getFunctionDevicesByFunctionDevices(int idEvent) {
+    public JournalEventEntity getFunctionDevicesByFunctionDevices(Long idEvent) {
         Session session = null;
         try {
             session = getSession();
@@ -171,7 +171,7 @@ public class JournalEventDAOImpl implements JournalEventDAO {
     }
 
     @Override
-    public JournalEventEntity getJournalUserRequestByUserRequest(int idEvent) {
+    public JournalEventEntity getJournalUserRequestByUserRequest(Long idEvent) {
         Session session = null;
         try {
             session = getSession();
@@ -195,7 +195,7 @@ public class JournalEventDAOImpl implements JournalEventDAO {
         }
     }
     @Override
-    public JournalEventEntity getJournalEventById(int idEvent) {
+    public JournalEventEntity getJournalEventById(Long idEvent) {
         Session session = null;
         try {
             session = getSession();

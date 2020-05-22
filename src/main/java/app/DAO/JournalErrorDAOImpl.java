@@ -122,7 +122,7 @@ public class JournalErrorDAOImpl implements JournalErrorDAO {
     }
 
     @Override
-    public JournalErrorEntity getTypeErrorByTypeError(int idError) {
+    public JournalErrorEntity getTypeErrorByTypeError(Long idError) {
         Session session = null;
         try {
             session = getSession();
@@ -147,7 +147,7 @@ public class JournalErrorDAOImpl implements JournalErrorDAO {
     }
 
     @Override
-    public JournalErrorEntity getJournalUserRequestByUserRequest(int idError) {
+    public JournalErrorEntity getJournalUserRequestByUserRequest(Long idError) {
         Session session = null;
         try {
             session = getSession();
@@ -172,7 +172,7 @@ public class JournalErrorDAOImpl implements JournalErrorDAO {
     }
 
     @Override
-    public JournalErrorEntity getFunctionDevicesByFunctionDevices(int idError) {
+    public JournalErrorEntity getFunctionDevicesByFunctionDevices(Long idError) {
         Session session = null;
         try {
             session = getSession();
@@ -197,7 +197,7 @@ public class JournalErrorDAOImpl implements JournalErrorDAO {
     }
 
     @Override
-    public JournalErrorEntity getJournalErrorById(int idError) {
+    public JournalErrorEntity getJournalErrorById(Long idError) {
         Session session = null;
         try {
             session = getSession();

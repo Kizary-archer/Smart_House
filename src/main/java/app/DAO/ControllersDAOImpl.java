@@ -69,7 +69,7 @@ public class ControllersDAOImpl implements ControllersDAO {
     }
 
     @Override
-    public ControllersEntity getControllerModelByModel(int idController) {
+    public ControllersEntity getControllerModelByModel(Long idController) {
         Session session = null;
         try {
             session = getSession();
@@ -94,7 +94,7 @@ public class ControllersDAOImpl implements ControllersDAO {
     }
 
     @Override
-    public ControllersEntity getWorkStatusByWorkStatus(int idController) {
+    public ControllersEntity getWorkStatusByWorkStatus(Long idController) {
         Session session = null;
         try {
             session = getSession();
@@ -119,7 +119,7 @@ public class ControllersDAOImpl implements ControllersDAO {
     }
 
     @Override
-    public ControllersEntity getDevicesByIdController(int idController) {
+    public ControllersEntity getDevicesByIdController(Long idController) {
         Session session = null;
         try {
             session = getSession();
@@ -144,7 +144,7 @@ public class ControllersDAOImpl implements ControllersDAO {
     }
 
     @Override
-    public ControllersEntity getGroupsControllersByIdController(int idController) {
+    public ControllersEntity getGroupsControllersByIdController(Long idController) {
         Session session = null;
         try {
             session = getSession();
@@ -169,7 +169,7 @@ public class ControllersDAOImpl implements ControllersDAO {
     }
 
     @Override
-    public ControllersEntity getControllerById(int idController) {
+    public ControllersEntity getControllerById(Long idController) {
         Session session = null;
         try {
             session = getSession();

@@ -9,11 +9,11 @@ public interface UserDAO extends DAOMain<UsersEntity> {
     public Collection<UsersEntity> getUsers(int limit, int offset, UsersEntity usersEntity);
     public Collection<UserviewEntity> getUsersView(int limit, int offset, UserviewEntity userviewEntity);
     public Collection<UserStatusEntity> getUserStatus();
-    public UsersEntity getControllersByIdUser(int idUser);
-    public UsersEntity getGroupFunctionsByIdUser(int idUser);
-    public UsersEntity getJournalUserRequestsByIdUser(int idUser);
-    public UsersEntity getUserRoleByRole(int idUser);
-    public UsersEntity getUserStatusByStatus(int idUser);
-    public UsersEntity getUserById(int idUser);
-    public UsersEntity getUserAllChild(int idUser);
+    public UsersEntity getControllersByIdUser(Long idUser);
+    public UsersEntity getGroupFunctionsByIdUser(Long idUser);
+    public UsersEntity getJournalUserRequestsByIdUser(Long idUser);
+    public UsersEntity getUserRoleByRole(Long idUser);
+    public UsersEntity getUserStatusByStatus(Long idUser);
+    public UsersEntity getUserById(Long idUser);
+    public UsersEntity getUserAllChild(Long idUser);
 }

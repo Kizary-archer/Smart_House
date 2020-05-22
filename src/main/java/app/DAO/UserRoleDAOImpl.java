@@ -61,7 +61,7 @@ public class UserRoleDAOImpl implements UserRoleDAO {
     }
 
     @Override
-    public UserRoleEntity getPermissionUserRolesByIdRole(int idRole) {
+    public UserRoleEntity getPermissionUserRolesByIdRole(Long idRole) {
         Session session = null;
         try {
             session = getSession();
@@ -86,7 +86,7 @@ public class UserRoleDAOImpl implements UserRoleDAO {
     }
 
     @Override
-    public UserRoleEntity getUsersByIdRole(int idRole) {
+    public UserRoleEntity getUsersByIdRole(Long idRole) {
         Session session = null;
         try {
             session = getSession();
@@ -111,7 +111,7 @@ public class UserRoleDAOImpl implements UserRoleDAO {
     }
 
     @Override
-    public UserRoleEntity getUserRoleById(int idRole) {
+    public UserRoleEntity getUserRoleById(Long idRole) {
         Session session = null;
         try {
             session = getSession();

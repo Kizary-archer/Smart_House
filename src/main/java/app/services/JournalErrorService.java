@@ -31,19 +31,19 @@ public class JournalErrorService {
         JournalErrorDAO journalErrorDAO = DAOCreateFactoryUtil.getInstance().getJournalErrorDAO();
         return  journalErrorDAO.delete(journalErrorEntity);
     }
-    public JournalErrorEntity getJournalErrorById(int idError){
+    public JournalErrorEntity getJournalErrorById(Long idError){
         JournalErrorDAO journalErrorDAO = DAOCreateFactoryUtil.getInstance().getJournalErrorDAO();
         return  journalErrorDAO.getJournalErrorById(idError);
     }
-    public JournalErrorEntity getTypeErrorByTypeError(int idError){
+    public JournalErrorEntity getTypeErrorByTypeError(Long idError){
         JournalErrorDAO journalErrorDAO = DAOCreateFactoryUtil.getInstance().getJournalErrorDAO();
         return  journalErrorDAO.getTypeErrorByTypeError(idError);
     }
-    public JournalErrorEntity getJournalUserRequestByUserRequest(int idError){
+    public JournalErrorEntity getJournalUserRequestByUserRequest(Long idError){
         JournalErrorDAO journalErrorDAO = DAOCreateFactoryUtil.getInstance().getJournalErrorDAO();
         return  journalErrorDAO.getJournalUserRequestByUserRequest(idError);
     }
-    public JournalErrorEntity getFunctionDevicesByFunctionDevices(int idError){
+    public JournalErrorEntity getFunctionDevicesByFunctionDevices(Long idError){
         JournalErrorDAO journalErrorDAO = DAOCreateFactoryUtil.getInstance().getJournalErrorDAO();
         return  journalErrorDAO.getFunctionDevicesByFunctionDevices(idError);
     }

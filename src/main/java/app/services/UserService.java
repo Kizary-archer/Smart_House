@@ -20,7 +20,7 @@ public class UserService {
         UserDAO userDAO = DAOCreateFactoryUtil.getInstance().getUserDAO();
         return  userDAO.update(usersEntity);
     }
-    public UsersEntity getUserById(int idUser){
+    public UsersEntity getUserById(Long idUser){
         UserDAO userDAO = DAOCreateFactoryUtil.getInstance().getUserDAO();
         return  userDAO.getUserById(idUser);
     }

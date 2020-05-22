@@ -72,7 +72,7 @@ public class DevicesDAOImpl implements DevicesDAO {
     }
 
     @Override
-    public DevicesEntity getControllersByController(int idDevice) {
+    public DevicesEntity getControllersByController(Long idDevice) {
         Session session = null;
         try {
             session = getSession();
@@ -97,7 +97,7 @@ public class DevicesDAOImpl implements DevicesDAO {
     }
 
     @Override
-    public DevicesEntity getTypeDevicesByTypeDevice(int idDevice) {
+    public DevicesEntity getTypeDevicesByTypeDevice(Long idDevice) {
         Session session = null;
         try {
             session = getSession();
@@ -122,7 +122,7 @@ public class DevicesDAOImpl implements DevicesDAO {
     }
 
     @Override
-    public DevicesEntity getWorkStatusByWorkStatus(int idDevice) {
+    public DevicesEntity getWorkStatusByWorkStatus(Long idDevice) {
         Session session = null;
         try {
             session = getSession();
@@ -147,7 +147,7 @@ public class DevicesDAOImpl implements DevicesDAO {
     }
 
     @Override
-    public DevicesEntity getFunctionDevicesByIdDevice(int idDevice) {
+    public DevicesEntity getFunctionDevicesByIdDevice(Long idDevice) {
         Session session = null;
         try {
             session = getSession();
@@ -172,7 +172,7 @@ public class DevicesDAOImpl implements DevicesDAO {
     }
 
     @Override
-    public DevicesEntity getDeviceById(int idDevice) {
+    public DevicesEntity getDeviceById(Long idDevice) {
         Session session = null;
         try {
             session = getSession();

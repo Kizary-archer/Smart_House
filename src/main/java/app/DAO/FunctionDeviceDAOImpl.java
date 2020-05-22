@@ -75,7 +75,7 @@ public class FunctionDeviceDAOImpl implements FunctionDevicesDAO {
     }
 
     @Override
-    public FunctionDevicesEntity getDevicesByDevice(int idFunction) {
+    public FunctionDevicesEntity getDevicesByDevice(Long idFunction) {
         Session session = null;
         try {
             session = getSession();
@@ -100,7 +100,7 @@ public class FunctionDeviceDAOImpl implements FunctionDevicesDAO {
     }
 
     @Override
-    public FunctionDevicesEntity getTypeFunctionByTypeFunction(int idFunction) {
+    public FunctionDevicesEntity getTypeFunctionByTypeFunction(Long idFunction) {
         Session session = null;
         try {
             session = getSession();
@@ -125,7 +125,7 @@ public class FunctionDeviceDAOImpl implements FunctionDevicesDAO {
     }
 
     @Override
-    public FunctionDevicesEntity getFunctionsGroupsByIdFunction(int idFunction) {
+    public FunctionDevicesEntity getFunctionsGroupsByIdFunction(Long idFunction) {
         Session session = null;
         try {
             session = getSession();
@@ -150,7 +150,7 @@ public class FunctionDeviceDAOImpl implements FunctionDevicesDAO {
     }
 
     @Override
-    public FunctionDevicesEntity getJournalErrorsByIdFunction(int idFunction) {
+    public FunctionDevicesEntity getJournalErrorsByIdFunction(Long idFunction) {
         Session session = null;
         try {
             session = getSession();
@@ -175,7 +175,7 @@ public class FunctionDeviceDAOImpl implements FunctionDevicesDAO {
     }
 
     @Override
-    public FunctionDevicesEntity getJournalEventsByIdFunction(int idFunction) {
+    public FunctionDevicesEntity getJournalEventsByIdFunction(Long idFunction) {
         Session session = null;
         try {
             session = getSession();
@@ -200,7 +200,7 @@ public class FunctionDeviceDAOImpl implements FunctionDevicesDAO {
     }
 
     @Override
-    public FunctionDevicesEntity getFunctionById(int idFunction) {
+    public FunctionDevicesEntity getFunctionById(Long idFunction) {
         Session session = null;
         try {
             session = getSession();
