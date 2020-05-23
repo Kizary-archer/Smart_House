@@ -27,7 +27,6 @@
                 <div class="form-group col-md-8">
                     <label for="role">Роль</label>
                     <select id="role" class="form-control" name="role" >
-                        <option value="" selected>Выберите роль</option>
                         <c:forEach var="role" items="${roles}">
                                 <option <c:if test="${user.role == role.idRole}">selected</c:if> value="${role.idRole}">${role.nameRole}</option>
                         </c:forEach>
@@ -38,7 +37,6 @@
                 <div class="form-group col-md-8">
                     <label for="role">Статус</label>
                     <select id="status" class="form-control" name="status" >
-                        <option value="" selected>Выберите статус</option>
                         <c:forEach var="status" items="${statuses}">
                             <option <c:if test="${user.status == status.idUserStatus}">selected</c:if> value="${status.idUserStatus}">${status.statusName}</option>
                         </c:forEach>

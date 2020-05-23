@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(urlPatterns = {"/DTDeviceView","/addDevice","/delDevice","/udpDevice"})
+@WebServlet(urlPatterns = {"/DTDeviceView","/addDevice","/delDevice","/updDevice","/viewDevice"})
 public class DeviceServlet extends HttpServlet {
 
     @Override
@@ -73,6 +73,22 @@ public class DeviceServlet extends HttpServlet {
                 request.setAttribute("isDeviceAdded", "true");
             }
             else request.setAttribute("isDeviceAdded", "false");
+            doGet(request, response);
+        }
+        if(request.getServletPath().equals("/updDevice")) {
+            if (deviceService.updDevice(devicesEntity)) {
+                request.setAttribute("isDeviceupd", "true");
+            }
+            else request.setAttribute("isDeviceupd", "false");
+            doGet(request, response);
+        }
+        if(request.getServletPath().equals("/delDevice")) {
+            if (deviceService.delDevice(devicesEntity)) {
+                request.setAttribute("isDevicedel", "true");
+                RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
+                requestDispatcher.forward(request, response);
+            }
+            else request.setAttribute("isDevicedel", "false");
             doGet(request, response);
         }
 /////////////////////
