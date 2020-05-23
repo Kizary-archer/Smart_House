@@ -2,6 +2,7 @@ package app.services;
 
 import app.DAO.DAOinterfaces.UserDAO;
 import app.Util.DAOCreateFactoryUtil;
+import app.entityes.JournalUserRequestViewEntity;
 import app.entityes.UserStatusEntity;
 import app.entityes.UsersEntity;
 import app.entityes.UserviewEntity;
@@ -36,6 +37,10 @@ public class UserService {
     public Collection<UserviewEntity> getUsersView(int limit, int offset, UserviewEntity userviewEntity){
         UserDAO userDAO = DAOCreateFactoryUtil.getInstance().getUserDAO();
         return  userDAO.getUsersView(limit,offset,userviewEntity);
+    }
+    public Collection<JournalUserRequestViewEntity> getJournalUserRequestView(int limit, int offset,Long idUser){
+        UserDAO userDAO = DAOCreateFactoryUtil.getInstance().getUserDAO();
+        return  userDAO.getJournalUserRequestView(limit,offset,idUser);
     }
     public Collection<UserStatusEntity> getUserStatus(){
         UserDAO userDAO = DAOCreateFactoryUtil.getInstance().getUserDAO();

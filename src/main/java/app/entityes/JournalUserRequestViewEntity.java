@@ -1,5 +1,7 @@
 package app.entityes;
 
+import com.google.gson.annotations.Expose;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Objects;
@@ -7,12 +9,19 @@ import java.util.Objects;
 @Entity
 @Table(name = "journal_user_request_view", schema = "public", catalog = "Smart_house")
 public class JournalUserRequestViewEntity {
+    @Expose()
     private Long idRequest;
+    @Expose()
     private Long idUser;
+    @Expose()
     private String login;
+    @Expose()
     private String nameEvent;
+    @Expose()
     private String nameError;
+    @Expose()
     private Timestamp dateRequest;
+    @Expose()
     private Boolean statusRequest;
 
     @Id

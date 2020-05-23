@@ -12,6 +12,9 @@ $(document).ready( function () {
     $('#headingFour').on('click',function(event){
         $("#btnJournalErrorFilter").click();
     });
+    $('#headingFive').on('click',function(event){
+        $("#btnDeviceViewFilter").click();
+    });
     //////////////////////
     $("#formUserView").submit(function(event) {
         event.preventDefault();
@@ -133,6 +136,42 @@ $(document).ready( function () {
                 {"data": "userRequest"},
                 {"data": "dateError"},
                 {"data": "description"}
+            ]
+        });
+        $('#DTJournalErrorView tbody').on('click', 'tr', function () {
+
+            if ( $(this).hasClass('selected') ) {
+                $(this).removeClass('selected');
+            }
+            else {
+                table.$('tr.selected').removeClass('selected');
+                $(this).addClass('selected');
+            }
+        });
+    });
+//////////////////////////////
+    $("#formDevicesView").submit(function(event){
+        event.preventDefault();
+        const table = $('#DTDeviceView').DataTable({
+            destroy: true,
+            'ajax': {
+                'type': 'POST',
+                'url': './DTDeviceView',
+                "dataSrc": "",
+                "data": function (d) {
+                    d.idDevice = $('#idDevice').val();
+                    d.nameDevice = $('#nameDevice').val();
+                    d.nameController = $('#nameController').val();
+                    d.nameType = $('#nameType').val();
+                    d.nameStatus = $('#nameStatus').val();
+                }
+            },
+            "columns": [
+                {"data": "idDevice"},
+                {"data": "nameDevice"},
+                {"data": "nameController"},
+                {"data": "nameType"},
+                {"data": "nameStatus"}
             ]
         });
         $('#DTJournalErrorView tbody').on('click', 'tr', function () {

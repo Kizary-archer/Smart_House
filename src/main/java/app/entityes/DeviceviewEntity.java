@@ -1,15 +1,22 @@
 package app.entityes;
 
+import com.google.gson.annotations.Expose;
+
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
 @Table(name = "deviceview", schema = "public", catalog = "Smart_house")
 public class DeviceviewEntity {
+    @Expose()
     private Long idDevice;
+    @Expose()
     private String nameDevice;
+    @Expose()
     private String nameController;
+    @Expose()
     private String nameType;
+    @Expose()
     private String nameStatus;
 
     @Id

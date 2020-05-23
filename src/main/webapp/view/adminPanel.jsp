@@ -199,6 +199,62 @@
             </div>
         </div>
     </div>
+    <div class="card">
+        <div class="card-header bg-info" id="headingFive"  data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+            <h5 class="mb-0">
+                <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    Список устройств
+                </button>
+            </h5>
+        </div>
+        <div id="collapseFive" class="collapse multi-collapse" aria-labelledby="headingFive" data-parent="#accordion">
+            <div class="card-body">
+                <div class="m-3" >
+                    <form method="post" id = "formDevicesView">
+                        <h2>Сортировка списка устройств</h2>
+                        <div class="form-row">
+                            <div class="form-group col-md-1">
+                                <label for="idDevice">Id устройства</label>
+                                <input type="text" class="form-control" id="idDevice" name="idDevice">
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label for="nameDevice">Устройство</label>
+                                <input type="text" class="form-control" id="nameDevice" name="nameDevice">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-2">
+                                <label for="nameController">Контроллер</label>
+                                <input type="text" class="form-control" id="nameController" name="nameController">
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label for="nameType">Тип</label>
+                                <input type="text" class="form-control" id="nameType" name="nameType">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-2">
+                                <label for="nameStatus">Статус</label>
+                                <input type="text" class="form-control" id="nameStatus" name="nameStatus">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary m-2" id="btnDeviceViewFilter">Найти</button>
+                    </form>
+                </div>
+                <table id="DTDeviceView" class="display">
+                    <thead>
+                    <tr>
+                        <th>Id устройства</th>
+                        <th>Устройство</th>
+                        <th>Контроллер</th>
+                        <th>Тип</th>
+                        <th>Статус</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 <script type="text/javascript" charset="utf8">

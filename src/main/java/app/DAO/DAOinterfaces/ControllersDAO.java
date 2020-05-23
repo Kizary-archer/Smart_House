@@ -6,7 +6,7 @@ import java.util.Collection;
 
 public interface ControllersDAO extends DAOMain<ControllersEntity> {
 
-    public Collection<ControllersEntity> getUsers(int limit, int offset, ControllersEntity controllersEntity);
+    public Collection<ControllersEntity> getControllers(int limit, int offset, ControllersEntity controllersEntity);
     public ControllersEntity getControllerModelByModel(Long idController);
     public ControllersEntity getWorkStatusByWorkStatus(Long idController);
     public ControllersEntity getDevicesByIdController(Long idController);

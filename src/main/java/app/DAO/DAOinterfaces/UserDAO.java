@@ -8,6 +8,7 @@ public interface UserDAO extends DAOMain<UsersEntity> {
 
     public Collection<UsersEntity> getUsers(int limit, int offset, UsersEntity usersEntity);
     public Collection<UserviewEntity> getUsersView(int limit, int offset, UserviewEntity userviewEntity);
+    public Collection<JournalUserRequestViewEntity> getJournalUserRequestView(int limit, int offset, Long idUser);
     public Collection<UserStatusEntity> getUserStatus();
     public UsersEntity getControllersByIdUser(Long idUser);
     public UsersEntity getGroupFunctionsByIdUser(Long idUser);

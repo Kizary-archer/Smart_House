@@ -18,7 +18,7 @@ import java.util.List;
 public class ControllersDAOImpl implements ControllersDAO {
 
     @Override
-    public Collection<ControllersEntity> getUsers(int limit, int offset, ControllersEntity controllersEntity) {
+    public Collection<ControllersEntity> getControllers(int limit, int offset, ControllersEntity controllersEntity) {
         Session session = null;
         try {
             session = getSession();

@@ -1,13 +1,7 @@
 package app.Util;
 
-import app.DAO.DAOinterfaces.JournalErrorDAO;
-import app.DAO.DAOinterfaces.JournalEventDAO;
-import app.DAO.DAOinterfaces.UserDAO;
-import app.DAO.DAOinterfaces.UserRoleDAO;
-import app.DAO.JournalErrorDAOImpl;
-import app.DAO.JournalEventDAOImpl;
-import app.DAO.UserDAOImpl;
-import app.DAO.UserRoleDAOImpl;
+import app.DAO.*;
+import app.DAO.DAOinterfaces.*;
 
 public class DAOCreateFactoryUtil {
 
@@ -16,7 +10,8 @@ public class DAOCreateFactoryUtil {
     private static UserRoleDAO userRoleDAO = null;
     private static JournalEventDAO journalEventDAO = null;
     private static JournalErrorDAO journalErrorDAO = null;
-
+    private static DevicesDAO devicesDAO = null;
+    private static ControllersDAO controllersDAO = null;
 
     public static DAOCreateFactoryUtil getInstance() {
         if (instance == null) {
@@ -48,5 +43,17 @@ public class DAOCreateFactoryUtil {
             journalErrorDAO = new JournalErrorDAOImpl();
         }
         return journalErrorDAO;
+    }
+    public DevicesDAO getDevicesDAO() {
+        if (devicesDAO == null) {
+            devicesDAO = new DevicesDAOImpl();
+        }
+        return devicesDAO;
+    }
+    public ControllersDAO getControllersDAO() {
+        if (controllersDAO == null) {
+            controllersDAO = new ControllersDAOImpl();
+        }
+        return controllersDAO;
     }
 }

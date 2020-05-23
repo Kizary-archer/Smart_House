@@ -1,6 +1,7 @@
 package app.DAO;
 
 import app.DAO.DAOinterfaces.UserDAO;
+import app.entityes.JournalUserRequestViewEntity;
 import app.entityes.UserStatusEntity;
 import app.entityes.UsersEntity;
 import app.entityes.UserviewEntity;
@@ -99,6 +100,32 @@ public class UserDAOImpl implements UserDAO {
                 criteriaBuilderQuery.where((pr));
             }
             Query query = session.createQuery(criteriaBuilderQuery);
+            if(limit != 0) query.setMaxResults(limit);
+            query.setFirstResult(offset);
+            List res = query.getResultList();
+            session.getTransaction().commit();
+            return res;
+        } catch (Exception e) {
+            System.out.println(e);
+            return null;
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+    }
+
+    @Override
+    public Collection<JournalUserRequestViewEntity> getJournalUserRequestView(int limit, int offset, Long idUser) {
+        Session session = null;
+        try {
+            session = getSession();
+            session.beginTransaction();
+            String hql = "select distinct  j " +
+                    "from JournalUserRequestViewEntity j " +
+                    "where j.idUser = :idUser";
+            Query query = session.createQuery(hql);
+            query.setParameter("idUser",idUser);
             if(limit != 0) query.setMaxResults(limit);
             query.setFirstResult(offset);
             List res = query.getResultList();

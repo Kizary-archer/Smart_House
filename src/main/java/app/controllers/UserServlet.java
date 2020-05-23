@@ -3,10 +3,7 @@ package app.controllers;
 import app.builder.UserBuilder;
 import app.builder.UserViewBuilder;
 import app.builder.UserRoleBuilder;
-import app.entityes.UserRoleEntity;
-import app.entityes.UserStatusEntity;
-import app.entityes.UsersEntity;
-import app.entityes.UserviewEntity;
+import app.entityes.*;
 import app.services.UserRoleService;
 import app.services.UserService;
 import com.google.gson.Gson;
@@ -21,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(urlPatterns = {"/DTUserView","/DTUserRoleView","/addUser","/viewUser","/delUser","/updUser"})
+@WebServlet(urlPatterns = {"/DTUserView","/DTUserRoleView","/addUser","/viewUser","/delUser","/updUser","/DTJournalUserRequestView"})
 public class UserServlet extends HttpServlet {
 
     @Override
@@ -81,6 +78,15 @@ public class UserServlet extends HttpServlet {
                     .excludeFieldsWithoutExposeAnnotation()
                     .create();
             String json = gson.toJson(userRoleEntityList);
+            response.getWriter().write(json);
+        }
+        if(request.getServletPath().equals("/DTJournalUserRequestView")) {
+            Long idUser = 2L;
+            List<JournalUserRequestViewEntity> journalUserRequestViewEntityList = (List<JournalUserRequestViewEntity>) userService.getJournalUserRequestView(1000,0,idUser);
+            Gson gson = new GsonBuilder()
+                    .excludeFieldsWithoutExposeAnnotation()
+                    .create();
+            String json = gson.toJson(journalUserRequestViewEntityList);
             response.getWriter().write(json);
         }
 /////CRUD////////
