@@ -18,7 +18,7 @@ public final class DevicesBuilder {
         if ((request.getParameter("workStatus") != null)&&(!request.getParameter("workStatus").equals("")))
             deviceViewEntity.setWorkStatus(Long.valueOf(request.getParameter("workStatus")));
         if ((request.getParameter("nameDevice") != null)&&(!request.getParameter("nameDevice").equals("")))
-            deviceViewEntity.setNameDevice(request.getParameter("v"));
+            deviceViewEntity.setNameDevice(request.getParameter("nameDevice"));
         if ((request.getParameter("description") != null)&&(!request.getParameter("description").equals("")))
             deviceViewEntity.setDescription((request.getParameter("description")));
     }

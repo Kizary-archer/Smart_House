@@ -239,6 +239,7 @@
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary m-2" id="btnDeviceViewFilter">Найти</button>
+                        <a href="./addDevice" type="button" class="btn btn-primary m-2" id="btnDeviceAdd">Добавить</a>
                     </form>
                 </div>
                 <table id="DTDeviceView" class="display">

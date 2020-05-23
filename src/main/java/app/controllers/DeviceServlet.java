@@ -1,9 +1,6 @@
 package app.controllers;
 
-import app.builder.DeviceViewBuilder;
-import app.builder.UserBuilder;
-import app.builder.UserRoleBuilder;
-import app.builder.UserViewBuilder;
+import app.builder.*;
 import app.entityes.*;
 import app.services.ControllerService;
 import app.services.DeviceService;
@@ -21,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(urlPatterns = {"/DTDeviceView"})
+@WebServlet(urlPatterns = {"/DTDeviceView","/addDevice","/delDevice","/udpDevice"})
 public class DeviceServlet extends HttpServlet {
 
     @Override
@@ -31,14 +28,17 @@ public class DeviceServlet extends HttpServlet {
         DeviceService deviceService = new DeviceService();
         List<TypeDevicesEntity> typeDevicesEntityList = (List<TypeDevicesEntity>) deviceService.getDeviceType();
         List<WorkStatusEntity> workStatusEntityList = (List<WorkStatusEntity>) deviceService.getDeviceWorkStatus();
-        request.setAttribute("roles",userRoleEntityList);
-        request.setAttribute("statuses",userStatusEntityList);
-        if(request.getServletPath().equals("/addUser")) {
-            requestDispatcher = request.getRequestDispatcher("view/addUser.jsp");
+        List<ControllersEntity> controllersEntityList = (List<ControllersEntity>) controllerService.getControllers(0,0,new ControllersEntity());
+        request.setAttribute("types",typeDevicesEntityList);
+        request.setAttribute("statuses",workStatusEntityList);
+        request.setAttribute("controllers",controllersEntityList);
+
+        if(request.getServletPath().equals("/addDevice")) {
+            requestDispatcher = request.getRequestDispatcher("view/addDevice.jsp");
         }else {
-            UsersEntity usersEntity = userService.getUserById(Long.valueOf(request.getParameter("idUser")));
-            request.setAttribute("user", usersEntity);
-            requestDispatcher = request.getRequestDispatcher("view/viewUser.jsp");
+            DevicesEntity devicesEntity = deviceService.getDeviceById(Long.valueOf(request.getParameter("idDevice")));
+            request.setAttribute("device", devicesEntity);
+            requestDispatcher = request.getRequestDispatcher("view/viewDevice.jsp");
         }
         assert requestDispatcher != null;
         requestDispatcher.forward(request, response);
@@ -46,6 +46,12 @@ public class DeviceServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
         DeviceService deviceService = new DeviceService();
+        DevicesEntity devicesEntity = null;
+        try {
+            devicesEntity = new DevicesBuilder(request).build();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         if(request.getServletPath().equals("/DTDeviceView")) {
             DeviceviewEntity deviceviewEntity = null;
@@ -61,6 +67,15 @@ public class DeviceServlet extends HttpServlet {
             String json = gson.toJson(deviceViewEntityList);
             response.getWriter().write(json);
         }
+        /////CRUD////////
+        if(request.getServletPath().equals("/addDevice")) {
+            if (deviceService.addDevice(devicesEntity)) {
+                request.setAttribute("isDeviceAdded", "true");
+            }
+            else request.setAttribute("isDeviceAdded", "false");
+            doGet(request, response);
+        }
+/////////////////////
     }
 }
 

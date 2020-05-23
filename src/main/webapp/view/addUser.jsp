@@ -30,7 +30,7 @@
             </div>
             <div class="form-row">
                 <div class="form-group col-md-8">
-                    <label for="role">Статус</label>
+                    <label for="status">Статус</label>
                     <select id="status" class="form-control" name="status" >
                         <option value="" selected>Выберите статус</option>
                         <c:forEach var="status" items="${statuses}">

@@ -184,5 +184,9 @@ $(document).ready( function () {
                 $(this).addClass('selected');
             }
         });
+        $('#DTDeviceView tbody').on('click', 'tr', function () {
+            var data = table.row( this ).data();
+            document.location = './viewDevice?idDevice=' + data.idDevice;
+        });
     });
 });
