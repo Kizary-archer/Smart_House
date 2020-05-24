@@ -28,35 +28,17 @@
         </button>
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
             <ul class="navbar-nav mr-4">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Клиенты
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="./listClients">Найти клиента</a>
-                        <a class="dropdown-item" href="./addClient">Добавить клиента</a>
-                    </div>
+                <li class="nav-item">
+                    <a class="nav-link "href="./listApartments">Пользоатель</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link "href="./listApartments">Квартиры</a>
+                    <a class="nav-link "href="./listApartments">Устройства</a>
                 </li>
-                <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Продажа квартир
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="./listApartmentSales">Найти продажу</a>
-                    <a class="dropdown-item" href="./addApartmentSale">Продать квартиру</a>
-                </div>
+                <li class="nav-item">
+                    <a class="nav-link "href="./listApartments">Админ панель</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Агенты
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="./listAgents">Найти агента</a>
-                        <a class="dropdown-item" href="./addAgent">Добавить агента</a>
-                    </div>
+                <li class="nav-item">
+                    <a class="nav-link "href="./listApartments">Выйти</a>
                 </li>
             </ul>
         </div>

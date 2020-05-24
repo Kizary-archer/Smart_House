@@ -1,12 +1,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="template/header.jsp"/>
-<div class="p-3">
-    <div class="w-25 p-3 mx-auto" >
+<div class="p-2 d-flex">
+    <div class="w-25 px-1" >
         <h2>Устройство</h2>
         <form method="post" class="py-3" >
             <div class="form-row">
-                <div class="form-group col-md-12">
+                <div class="form-group col-md-11">
                     <label for="nameDevice">Название устройства</label>
                     <input type="text" class="form-control" id="nameDevice" name="nameDevice" value=${device.nameDevice}>
                 </div>
@@ -46,9 +46,9 @@
                 </div>
             </div>
             <div class="form-row">
-                <div class="form-group col-md-12">
+                <div class="form-group col-md-11">
                     <label for="description">Описание</label>
-                    <textarea id="description" name="description" cols="30" rows="3">${device.description}</textarea>
+                    <textarea id="description" name="description" class="form-control">${device.description}</textarea>
                 </div>
             </div>
             <button type="submit" class="btn btn-primary" formaction="./updDevice">Обновить</button>
@@ -72,6 +72,24 @@
             </div>
         </c:if>
     </div>
+    <div class="w-75" style="background-color: red">
+        <div class="accordion" id="accordion">
+        <div class="card">
+            <div class="card-header bg-info" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                <h5 class="mb-0">
+                    <button id="btnUserList" class="btn" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        Список запросов пользователя
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseOne" class="collapse multi-collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                    ddddd
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 </body>
 </html>

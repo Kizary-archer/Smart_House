@@ -17,7 +17,6 @@ $(document).ready( function () {
                 {"data": "idUser"},
                 {"data": "login"},
                 {"data": "nameEvent"},
-                {"data": "nameError"},
                 {"data": "dateRequest"},
                 {"data": "statusRequest"}
             ]

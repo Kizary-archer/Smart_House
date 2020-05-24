@@ -6,7 +6,7 @@
         <h2>Добавить  устройство</h2>
         <form method="post" class="py-3" >
             <div class="form-row">
-                <div class="form-group col-md-12">
+                <div class="form-group col-md-11">
                     <label for="nameDevice">Название устройства</label>
                     <input type="text" class="form-control" id="nameDevice" name="nameDevice" placeholder="Название устройства">
                 </div>
@@ -45,9 +45,9 @@
                 </div>
             </div>
             <div class="form-row">
-                <div class="form-group col-md-12">
+                <div class="form-group col-md-11">
                     <label for="description">Описание</label>
-                    <textarea id="description" name="description" placeholder="Описание"cols="30" rows="3"></textarea>
+                    <textarea id="description" name="description" class="form-control"></textarea>
                 </div>
             </div>
             <button type="submit" class="btn btn-primary" formaction="./addDevice">Добавить</button>
