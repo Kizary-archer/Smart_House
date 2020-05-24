@@ -258,7 +258,5 @@
     </div>
 </div>
 </body>
-<script type="text/javascript" charset="utf8">
-    <%@include file='./../js/multiSelectAdmin.js' %>
-</script>
+<script type="text/javascript" charset="utf8" src="./../js/multiSelectAdmin.js"></script>
 </html>

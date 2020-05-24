@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(urlPatterns = {"/DTDeviceView","/addDevice","/delDevice","/updDevice","/viewDevice"})
+@WebServlet(urlPatterns = {"/DTDeviceView","/addDevice","/delDevice","/updDevice","/viewDevice","/deviceFuncData"})
 public class DeviceServlet extends HttpServlet {
 
     @Override
@@ -90,6 +90,10 @@ public class DeviceServlet extends HttpServlet {
             }
             else request.setAttribute("isDevicedel", "false");
             doGet(request, response);
+        }
+        if(request.getServletPath().equals("/deviceFuncData")) {
+            String s = "[[527082200000,188.36  ],[1527168600000,188.15],[1527255000000,188.58],[1527600600000,187.9]]";
+            response.getWriter().write(s);
         }
 /////////////////////
     }

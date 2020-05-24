@@ -99,8 +99,6 @@
             </div>
         </div>
 </div>
-<script type="text/javascript" charset="utf8">
-<%@include file='./../js/userTables.js' %>
-</script>
+    <script type="text/javascript" charset="utf8" src="./../js/userTables.js"></script>
 </body>
 </html>

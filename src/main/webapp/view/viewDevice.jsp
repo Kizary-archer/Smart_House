@@ -1,6 +1,18 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="template/header.jsp"/>
+<script type="text/javascript" charset="utf8">
+    <%@include file='../js/Highcharts/code/highstock.js' %>
+</script>
+<script type="text/javascript" charset="utf8">
+    <%@include file='../js/Highcharts/code/modules/data.js' %>
+</script>
+<script type="text/javascript" charset="utf8">
+    <%@include file='../js/Highcharts/code/modules/exporting.js' %>
+</script>
+<script type="text/javascript" charset="utf8">
+    <%@include file='../js/Highcharts/code/modules/export-data.js' %>
+</script>
 <div class="p-2 d-flex">
     <div class="w-25 px-1" >
         <h2>Устройство</h2>
@@ -72,23 +84,11 @@
             </div>
         </c:if>
     </div>
-    <div class="w-75" style="background-color: red">
-        <div class="accordion" id="accordion">
-        <div class="card">
-            <div class="card-header bg-info" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                <h5 class="mb-0">
-                    <button id="btnUserList" class="btn" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                        Список запросов пользователя
-                    </button>
-                </h5>
-            </div>
-            <div id="collapseOne" class="collapse multi-collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="card-body">
-                    ddddd
-                </div>
-            </div>
-        </div>
-    </div>
+    <div class="w-75">
+        <div id="container" style="height: 400px; min-width: 310px"></div>
+        <script type="text/javascript" charset="utf8">
+            <%@include file='../js/Device.js' %>
+        </script>
 </div>
 </div>
 </body>
