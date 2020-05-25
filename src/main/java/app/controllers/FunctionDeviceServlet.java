@@ -46,8 +46,10 @@ public class FunctionDeviceServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
         FunctionDeviceService functionDeviceService = new FunctionDeviceService();
         if(request.getServletPath().equals("/deviceFuncData")) {
+           //functionDeviceService.getFunctionDataJson(Long.valueOf(request.getParameter("idFunction")));
             String s = "[[527082200000,188.36  ],[1527168600000,188.15],[1527255000000,188.58],[1527600600000,187.9]]";
-            response.getWriter().write(s);
+            String res = functionDeviceService.getFunctionDataJson(Long.valueOf(request.getParameter("idFunction")));
+            response.getWriter().write(res);
         }
         else{
             FunctionDevicesEntity functionDevicesEntity = null;

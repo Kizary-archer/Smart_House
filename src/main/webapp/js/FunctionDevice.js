@@ -1,6 +1,6 @@
 $(document).ready( function (){
    // Highcharts.getJSON('https://www.highcharts.com/samples/data/aapl-c.json', function (data) {
-        $.post('/deviceFuncData',{'idDevice':$("#idDevice").val()},function(data) {
+        $.post('/deviceFuncData',{'idFunction':$("#idFunction").val()},function(data) {
             data = jQuery.parseJSON(data);
         // Create the chart
         Highcharts.stockChart('container', {

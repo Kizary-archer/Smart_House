@@ -1,11 +1,10 @@
 package app.services;
 
 import app.DAO.DAOinterfaces.FunctionDevicesDAO;
-import app.DAO.DAOinterfaces.UserDAO;
 import app.Util.DAOCreateFactoryUtil;
 import app.entityes.*;
+import com.google.gson.JsonArray;
 
-import java.sql.Timestamp;
 import java.util.Collection;
 
 public class FunctionDeviceService {
@@ -33,5 +32,22 @@ public class FunctionDeviceService {
     public Collection<TypeFunctionEntity> getTypeFunctions(){
         FunctionDevicesDAO functionDevicesDAO = DAOCreateFactoryUtil.getInstance().getFunctionDevicesDAO();
         return  functionDevicesDAO.getTypeFunctions();
+    }
+    public FunctionDevicesEntity getJournalEventsByIdFunction(Long idFunction){
+        FunctionDevicesDAO functionDevicesDAO = DAOCreateFactoryUtil.getInstance().getFunctionDevicesDAO();
+        return  functionDevicesDAO.getJournalEventsByIdFunction(idFunction);
+    }
+    public String getFunctionDataJson(Long idFunction){
+        JsonArray jsonList= new JsonArray();
+        JsonArray jsonEntity= new JsonArray();
+        FunctionDevicesEntity functionDevicesEntity = getJournalEventsByIdFunction(idFunction);
+        Collection<JournalEventEntity> journalEventEntities = functionDevicesEntity.getJournalEventsByIdFunction();
+        for (JournalEventEntity journalEventEntity:journalEventEntities){
+            JsonArray jsonElement = new JsonArray();
+            jsonElement.add(journalEventEntity.getDateEvent().toInstant().plusMillis(14400000).toEpochMilli());
+            jsonElement.add(journalEventEntity.getData());
+            jsonEntity.add(jsonElement);
+        }
+        return jsonEntity.toString();
     }
 }

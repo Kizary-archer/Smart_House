@@ -122,7 +122,7 @@
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-2">
-                                <label for="userRequest">Id пользователя</label>
+                                <label for="userRequest">Id запроса</label>
                                 <input type="text" class="form-control" id="userRequest" name="userRequest">
                             </div>
                             <div class="form-group col-md-2">
@@ -139,7 +139,7 @@
                         <th>Id события</th>
                         <th>Имя события</th>
                         <th>Имя функции</th>
-                        <th>Id пользователя</th>
+                        <th>Id запроса</th>
                         <th>Дата события</th>
                         <th>Данные</th>
                     </tr>
@@ -177,7 +177,7 @@
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-2">
-                                <label for="userRequestEr">Id пользователя</label>
+                                <label for="userRequestEr">Id запроса</label>
                                 <input type="text" class="form-control" id="userRequestEr" name="userRequestEr">
                             </div>
                         </div>
@@ -190,7 +190,7 @@
                         <th>Id ошибки</th>
                         <th>Имя ошибки</th>
                         <th>Имя функции</th>
-                        <th>Id пользователя</th>
+                        <th>Id запроса</th>
                         <th>Дата ошибки</th>
                         <th>Описание</th>
                     </tr>
