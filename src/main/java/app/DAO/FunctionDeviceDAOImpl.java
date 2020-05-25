@@ -2,8 +2,7 @@ package app.DAO;
 
 import app.DAO.DAOinterfaces.ControllersDAO;
 import app.DAO.DAOinterfaces.FunctionDevicesDAO;
-import app.entityes.ControllersEntity;
-import app.entityes.FunctionDevicesEntity;
+import app.entityes.*;
 import org.hibernate.Session;
 
 import javax.persistence.Query;
@@ -18,7 +17,7 @@ import java.util.List;
 public class FunctionDeviceDAOImpl implements FunctionDevicesDAO {
 
     @Override
-    public Collection<FunctionDevicesEntity> getDevices(int limit, int offset, FunctionDevicesEntity functionDevicesEntity) {
+    public Collection<FunctionDevicesEntity> getFunctionDevices(int limit, int offset, FunctionDevicesEntity functionDevicesEntity) {
         Session session = null;
         try {
             session = getSession();
@@ -62,6 +61,27 @@ public class FunctionDeviceDAOImpl implements FunctionDevicesDAO {
             if(limit != 0) query.setMaxResults(limit);
             query.setFirstResult(offset);
             List res = query.getResultList();
+            session.getTransaction().commit();
+            return res;
+        } catch (Exception e) {
+            System.out.println(e);
+            return null;
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+    }
+
+    @Override
+    public Collection<TypeFunctionEntity> getTypeFunctions() {
+        Session session = null;
+        try {
+            session = getSession();
+            session.beginTransaction();
+            String hql = "from TypeFunctionEntity ";
+            Query query =  session.createQuery(hql);
+            Collection<TypeFunctionEntity> res = query.getResultList();
             session.getTransaction().commit();
             return res;
         } catch (Exception e) {

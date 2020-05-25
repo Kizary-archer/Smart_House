@@ -12,6 +12,7 @@ public class DAOCreateFactoryUtil {
     private static JournalErrorDAO journalErrorDAO = null;
     private static DevicesDAO devicesDAO = null;
     private static ControllersDAO controllersDAO = null;
+    private static FunctionDevicesDAO functionDevicesDAO = null;
 
     public static DAOCreateFactoryUtil getInstance() {
         if (instance == null) {
@@ -55,5 +56,11 @@ public class DAOCreateFactoryUtil {
             controllersDAO = new ControllersDAOImpl();
         }
         return controllersDAO;
+    }
+    public FunctionDevicesDAO getFunctionDevicesDAO() {
+        if (functionDevicesDAO == null) {
+            functionDevicesDAO = new FunctionDeviceDAOImpl();
+        }
+        return functionDevicesDAO;
     }
 }

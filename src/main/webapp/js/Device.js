@@ -20,7 +20,7 @@ $(document).ready( function () {
         });
         $('#DTFunctionDeviceView tbody').on('click', 'tr', function () {
             var data = table.row( this ).data();
-            document.location = './viewFuncDevice?idFunction=' + data.idFunction;
+            document.location = './viewFunc?idFunction=' + data.idFunction;
         });
     });
     ////////////////////////////////
