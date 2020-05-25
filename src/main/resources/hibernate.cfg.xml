@@ -44,6 +44,7 @@
         <mapping class="app.entityes.JournalErrorViewEntity"/>
         <mapping class="app.entityes.JournalEventViewEntity"/>
         <mapping class="app.entityes.JournalUserRequestViewEntity"/>
+        <mapping class="app.entityes.FunctiondeviceviewEntity"/>
 
     </session-factory>
 </hibernate-configuration>

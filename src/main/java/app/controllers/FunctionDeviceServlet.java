@@ -1,11 +1,10 @@
 package app.controllers;
 
-import app.builder.*;
+import app.builder.DeviceViewBuilder;
+import app.builder.DevicesBuilder;
 import app.entityes.*;
 import app.services.ControllerService;
 import app.services.DeviceService;
-import app.services.UserRoleService;
-import app.services.UserService;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -18,8 +17,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(urlPatterns = {"/DTDeviceView","/addDevice","/delDevice","/updDevice","/viewDevice","/deviceFuncData","/DTFunctionDeviceView"})
-public class DeviceServlet extends HttpServlet {
+//@WebServlet(urlPatterns = {"/DTDeviceView","/addDevice","/delDevice","/updDevice","/viewDevice","/deviceFuncData"})
+public class FunctionDeviceServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
@@ -67,15 +66,6 @@ public class DeviceServlet extends HttpServlet {
             String json = gson.toJson(deviceViewEntityList);
             response.getWriter().write(json);
         }
-        if(request.getServletPath().equals("/DTFunctionDeviceView")) {
-            List<FunctiondeviceviewEntity> functiondeviceviewEntityList = (List<FunctiondeviceviewEntity>) deviceService
-                    .getFunctionDeviceView(Long.valueOf(request.getParameter("idDevice")));
-            Gson gson = new GsonBuilder()
-                    .excludeFieldsWithoutExposeAnnotation()
-                    .create();
-            String json = gson.toJson(functiondeviceviewEntityList);
-            response.getWriter().write(json);
-        }
         /////CRUD////////
         if(request.getServletPath().equals("/addDevice")) {
             if (deviceService.addDevice(devicesEntity)) {
@@ -99,6 +89,10 @@ public class DeviceServlet extends HttpServlet {
             }
             else request.setAttribute("isDevicedel", "false");
             doGet(request, response);
+        }
+        if(request.getServletPath().equals("/deviceFuncData")) {
+            String s = "[[527082200000,188.36  ],[1527168600000,188.15],[1527255000000,188.58],[1527600600000,187.9]]";
+            response.getWriter().write(s);
         }
 /////////////////////
     }

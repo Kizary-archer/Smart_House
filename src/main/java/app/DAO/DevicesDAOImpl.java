@@ -140,6 +140,29 @@ public class DevicesDAOImpl implements DevicesDAO {
     }
 
     @Override
+    public Collection<FunctiondeviceviewEntity> getFunctionDeviceView(Long idDevice) {
+        Session session = null;
+        try {
+            session = getSession();
+            session.beginTransaction();
+            String hql = "from FunctiondeviceviewEntity where device = :idDevice";
+            Query query =  session.createQuery(hql);
+            query.setParameter("idDevice",idDevice);
+            Collection<FunctiondeviceviewEntity> res = query.getResultList();
+            session.getTransaction().commit();
+            return res;
+        } catch (Exception e) {
+            System.out.println(e);
+            return null;
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+    }
+
+
+    @Override
     public Collection<WorkStatusEntity> getDeviceWorkStatus() {
         Session session = null;
         try {

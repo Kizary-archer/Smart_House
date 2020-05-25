@@ -32,6 +32,10 @@ public class DeviceService {
         DevicesDAO devicesDAO = DAOCreateFactoryUtil.getInstance().getDevicesDAO();
         return  devicesDAO.getDevices(limit,offset, devicesEntity);
     }
+    public Collection<FunctiondeviceviewEntity> getFunctionDeviceView(Long idDevice){
+        DevicesDAO devicesDAO = DAOCreateFactoryUtil.getInstance().getDevicesDAO();
+        return  devicesDAO.getFunctionDeviceView(idDevice);
+    }
     public Collection<DeviceviewEntity> getDevicesView(int limit, int offset, DeviceviewEntity deviceviewEntity){
         DevicesDAO devicesDAO = DAOCreateFactoryUtil.getInstance().getDevicesDAO();
         return  devicesDAO.getDevicesView(limit,offset, deviceviewEntity);
