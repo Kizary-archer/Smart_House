@@ -33,7 +33,7 @@ public class FunctionDeviceServlet extends HttpServlet {
         request.setAttribute("devices",devicesEntityList);
 
         if(request.getServletPath().equals("/addFunc")){
-            requestDispatcher = request.getRequestDispatcher("view/vi.jsp");
+            requestDispatcher = request.getRequestDispatcher("view/addFuncDevice.jsp");
         }else {
             FunctionDevicesEntity functionDevicesEntity = functionDeviceService.getFunctionDeviceById(Long.valueOf(request.getParameter("idFunction")));
             request.setAttribute("function", functionDevicesEntity);
@@ -45,41 +45,43 @@ public class FunctionDeviceServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
         FunctionDeviceService functionDeviceService = new FunctionDeviceService();
-        FunctionDevicesEntity functionDevicesEntity = null;
-        try {
-            functionDevicesEntity = new FunctionDeviceBuilder(request).build();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
         if(request.getServletPath().equals("/deviceFuncData")) {
             String s = "[[527082200000,188.36  ],[1527168600000,188.15],[1527255000000,188.58],[1527600600000,187.9]]";
             response.getWriter().write(s);
         }
-        /////CRUD////////
-        if(request.getServletPath().equals("/addFunc")) {
-            if (functionDeviceService.addFunctionDevice(functionDevicesEntity)) {
-                request.setAttribute("isFuncAdded", "true");
+        else{
+            FunctionDevicesEntity functionDevicesEntity = null;
+            try {
+                functionDevicesEntity = new FunctionDeviceBuilder(request).build();
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-            else request.setAttribute("isFuncAdded", "false");
-            doGet(request, response);
-        }
-        if(request.getServletPath().equals("/updFunc")) {
-            if (functionDeviceService.updFunctionDevice(functionDevicesEntity)) {
-                request.setAttribute("isFuncupd", "true");
-            }
-            else request.setAttribute("isFuncupd", "false");
-            doGet(request, response);
-        }
-        if(request.getServletPath().equals("/delFunc")) {
-            if (functionDeviceService.delFunctionDevice(functionDevicesEntity)) {
-                request.setAttribute("isFuncdel", "true");
-                RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
-                requestDispatcher.forward(request, response);
-            }
-            else request.setAttribute("isFuncdel", "false");
-            doGet(request, response);
-        }
 
+        /////CRUD////////
+                if(request.getServletPath().equals("/addFunc")) {
+                    if (functionDeviceService.addFunctionDevice(functionDevicesEntity)) {
+                        request.setAttribute("isFuncAdded", "true");
+                    }
+                    else request.setAttribute("isFuncAdded", "false");
+                    doGet(request, response);
+                }
+                if(request.getServletPath().equals("/updFunc")) {
+                    if (functionDeviceService.updFunctionDevice(functionDevicesEntity)) {
+                        request.setAttribute("isFuncupd", "true");
+                    }
+                    else request.setAttribute("isFuncupd", "false");
+                    doGet(request, response);
+                }
+                if(request.getServletPath().equals("/delFunc")) {
+                    if (functionDeviceService.delFunctionDevice(functionDevicesEntity)) {
+                        request.setAttribute("isFuncdel", "true");
+                        RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
+                        requestDispatcher.forward(request, response);
+                    }
+                    else request.setAttribute("isFuncdel", "false");
+                    doGet(request, response);
+                }
+        }
 /////////////////////
     }
 }

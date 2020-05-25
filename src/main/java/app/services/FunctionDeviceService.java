@@ -12,10 +12,14 @@ public class FunctionDeviceService {
 
     public boolean addFunctionDevice(FunctionDevicesEntity functionDevicesEntity){
         FunctionDevicesDAO functionDevicesDAO = DAOCreateFactoryUtil.getInstance().getFunctionDevicesDAO();
+        if((functionDevicesEntity.getData()<functionDevicesEntity.getMinData()) || (functionDevicesEntity.getData()>functionDevicesEntity.getMaxData()))
+            return false;//проверка данных на принадлежность диапозону
         return  functionDevicesDAO.add(functionDevicesEntity);
     }
     public boolean updFunctionDevice(FunctionDevicesEntity functionDevicesEntity){
         FunctionDevicesDAO functionDevicesDAO = DAOCreateFactoryUtil.getInstance().getFunctionDevicesDAO();
+        if((functionDevicesEntity.getData()<functionDevicesEntity.getMinData()) || (functionDevicesEntity.getData()>functionDevicesEntity.getMaxData()))
+            return false;//проверка данных на принадлежность диапозону 
         return  functionDevicesDAO.update(functionDevicesEntity);
     }
     public boolean delFunctionDevice(FunctionDevicesEntity functionDevicesEntity){

@@ -84,6 +84,7 @@
                 </div>
                 <div id="collapseOne" class="collapse multi-collapse" aria-labelledby="headingOne" data-parent="#accordion">
                     <div class="card-body">
+                        <a href="./addFunc" type="button" class="btn btn-primary m-2" id="btnUserAdd">Добавить</a>
                         <table id="DTFunctionDeviceView" class="display">
                             <thead>
                             <tr>
