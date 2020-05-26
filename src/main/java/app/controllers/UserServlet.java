@@ -71,7 +71,7 @@ public class UserServlet extends HttpServlet {
                 session.setAttribute("authUser",authUser);
                 Long role = authUser.getRole();
                 if(role.equals(1L))requestDispatcher = request.getRequestDispatcher("view/adminPanel.jsp");
-                else requestDispatcher = request.getRequestDispatcher("index.jsp");
+                else requestDispatcher = request.getRequestDispatcher("view/listDevices.jsp");
             }
             else {
                 request.setAttribute("userIsAuth", "false");

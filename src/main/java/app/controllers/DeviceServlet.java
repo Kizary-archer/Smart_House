@@ -18,12 +18,16 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(urlPatterns = {"/DTDeviceView","/addDevice","/delDevice","/updDevice","/viewDevice","/DTFunctionDeviceView"})
+@WebServlet(urlPatterns = {"/DTDeviceView","/addDevice","/delDevice","/updDevice","/viewDevice","/DTFunctionDeviceView","/listDevices"})
 public class DeviceServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
         RequestDispatcher requestDispatcher = null;
+        if(request.getServletPath().equals("/listDevices")) {
+            requestDispatcher = request.getRequestDispatcher("view/listDevices.jsp");
+            requestDispatcher.forward(request, response);
+        }
         ControllerService controllerService = new ControllerService();
         DeviceService deviceService = new DeviceService();
         List<TypeDevicesEntity> typeDevicesEntityList = (List<TypeDevicesEntity>) deviceService.getDeviceType();

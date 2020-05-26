@@ -22,18 +22,20 @@
 <body>
 <div>
     <nav class="navbar navbar-expand-lg fixed-top">
-        <a class="navbar-brand" href="./">Главная</a>
+        <a class="navbar-brand">Главная</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon">+</span>
         </button>
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
             <ul class="navbar-nav mr-4">
                 <li class="nav-item">
-                    <a class="nav-link "href="./listApartments">Устройства</a>
+                    <a class="nav-link "href="./listDevices">Устройства</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link "href="./admin">Админ-панель</a>
-                </li>
+                <c:if test="${sessionScope.authUser.role == 1}">
+                    <li class="nav-item">
+                        <a class="nav-link "href="./admin">Админ-панель</a>
+                    </li>
+                </c:if>
                 <li class="nav-item">
                     <a class="nav-link "href="./listApartments">Выйти</a>
                 </li>

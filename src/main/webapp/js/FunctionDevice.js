@@ -32,4 +32,12 @@ $(document).ready( function (){
             }]
         });
     });
+    $("#range_02").ionRangeSlider({
+        min: $("#minData").val(),
+        max: $("#maxData").val(),
+        from: $("#data").val(),
+        onFinish: function (data) {
+            $("#data").prop("value", data.from);
+        }
+    });
 });

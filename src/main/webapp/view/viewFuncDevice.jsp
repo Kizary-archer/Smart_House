@@ -13,6 +13,15 @@
 <script type="text/javascript" charset="utf8">
     <%@include file='../js/Highcharts/code/modules/export-data.js' %>
 </script>
+<script type="text/javascript" charset="utf8">
+    <%@include file='../js/FunctionDevice.js' %>
+</script>
+<link rel="stylesheet" href="https://bootstraptema.ru/plugins/2018/irs/ion.rangeSlider.css" />
+<link rel="stylesheet" href="https://bootstraptema.ru/plugins/2018/irs/ion.rangeSlider.skin.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://bootstraptema.ru/plugins/2018/irs/ion.rangeSlider.min.js"></script>
+<link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
 <div class="p-2 d-flex">
     <div class="w-25 px-1" >
         <h2>Функция устройства</h2>
@@ -100,11 +109,19 @@
     </div>
     <div class="w-75">
         <div id="container" style="height: 400px; min-width: 310px"></div>
-        <script type="text/javascript" charset="utf8">
-            <%@include file='../js/FunctionDevice.js' %>
-        </script>
         <c:if test="${function.getTypeFunctionByTypeFunction().getRange() == true}">
-        <div style="background-color: red" class="h-25">scasc</div>
+        <div class="h-25 py-5">
+            <c:if test="${function.getTypeFunctionByTypeFunction().getRange() == true}">
+            <div class="col-sm-10 mx-auto">
+                <input type="text" id="range_02">
+            </div>
+            </c:if>
+            <c:if test="${function.getTypeFunctionByTypeFunction().getRange() == true}">
+            <div>
+            <input type="checkbox" checked data-toggle="toggle" data-on="Включено" data-off="Выключено" data-onstyle="success" data-offstyle="danger">
+            </div>
+            </c:if>
+        </div>
         </c:if>
 </div>
 </div>

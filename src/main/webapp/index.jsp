@@ -43,7 +43,6 @@
                 </button>
             </div>
         </c:if>
-        ${sessionScope.authUser.login}
     </div>
 </div>
 </body>
