@@ -9,13 +9,8 @@ $(document).ready( function (){
             rangeSelector: {
                 selected: 1
             },
-
-            title: {
-                text: 'AAPL Stock Price'
-            },
-
             series: [{
-                name: 'AAPL Stock Price',
+                name: 'Data',
                 data: data,
                 type: 'areaspline',
                 threshold: null,

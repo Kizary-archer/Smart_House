@@ -16,5 +16,6 @@ public interface UserDAO extends DAOMain<UsersEntity> {
     public UsersEntity getUserRoleByRole(Long idUser);
     public UsersEntity getUserStatusByStatus(Long idUser);
     public UsersEntity getUserById(Long idUser);
+    public UsersEntity authorization(String login);
     public UsersEntity getUserAllChild(Long idUser);
 }

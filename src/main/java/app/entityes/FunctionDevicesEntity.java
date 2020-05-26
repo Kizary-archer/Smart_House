@@ -132,7 +132,7 @@ public class FunctionDevicesEntity {
         this.devicesByDevice = devicesByDevice;
     }
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "type_function", referencedColumnName = "id_type", nullable = false,insertable = false, updatable = false)
     public TypeFunctionEntity getTypeFunctionByTypeFunction() {
         return typeFunctionByTypeFunction;

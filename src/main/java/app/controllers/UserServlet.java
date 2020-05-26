@@ -1,5 +1,6 @@
 package app.controllers;
 
+import app.Util.HibernateSessionFactoryUtil;
 import app.builder.UserBuilder;
 import app.builder.UserViewBuilder;
 import app.builder.UserRoleBuilder;
@@ -10,16 +11,23 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(urlPatterns = {"/DTUserView","/DTUserRoleView","/addUser","/viewUser","/delUser","/updUser","/DTJournalUserRequestView"})
+@WebServlet(urlPatterns = {"/DTUserView","/DTUserRoleView","/addUser","/viewUser","/delUser","/updUser","/DTJournalUserRequestView","/authUser"})
 public class UserServlet extends HttpServlet {
+
+    @Override
+    public void init(ServletConfig config) throws ServletException {
+        HibernateSessionFactoryUtil.getSessionFactory();
+    }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
@@ -50,7 +58,27 @@ public class UserServlet extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+        if(request.getServletPath().equals("/authUser")) {//авторизация
+            RequestDispatcher requestDispatcher;
+            UsersEntity authUser = null;
+            try {
+                authUser = userService.authorization(usersEntity);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            if (authUser != null) {
+                HttpSession session = request.getSession();
+                session.setAttribute("authUser",authUser);
+                Long role = authUser.getRole();
+                if(role.equals(1L))requestDispatcher = request.getRequestDispatcher("view/adminPanel.jsp");
+                else requestDispatcher = request.getRequestDispatcher("index.jsp");
+            }
+            else {
+                request.setAttribute("userIsAuth", "false");
+                requestDispatcher = request.getRequestDispatcher("index.jsp");
+            }
+            requestDispatcher.forward(request, response);
+        }
         if(request.getServletPath().equals("/DTUserView")) {
             UserviewEntity userviewEntity = null;
             try {

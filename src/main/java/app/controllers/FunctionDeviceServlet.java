@@ -36,6 +36,7 @@ public class FunctionDeviceServlet extends HttpServlet {
             requestDispatcher = request.getRequestDispatcher("view/addFuncDevice.jsp");
         }else {
             FunctionDevicesEntity functionDevicesEntity = functionDeviceService.getFunctionDeviceById(Long.valueOf(request.getParameter("idFunction")));
+           // functionDevicesEntity.getTypeFunctionByTypeFunction().getRange()
             request.setAttribute("function", functionDevicesEntity);
             requestDispatcher = request.getRequestDispatcher("view/viewFuncDevice.jsp");
         }

@@ -32,7 +32,7 @@
                     <a class="nav-link "href="./listApartments">Устройства</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link "href="./listApartments">Админ-панель</a>
+                    <a class="nav-link "href="./admin">Админ-панель</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link "href="./listApartments">Выйти</a>

@@ -103,6 +103,9 @@
         <script type="text/javascript" charset="utf8">
             <%@include file='../js/FunctionDevice.js' %>
         </script>
+        <c:if test="${function.getTypeFunctionByTypeFunction().getRange() == true}">
+        <div style="background-color: red" class="h-25">scasc</div>
+        </c:if>
 </div>
 </div>
 </body>
