@@ -7,8 +7,10 @@ import app.entityes.*;
 import app.services.ControllerService;
 import app.services.DeviceService;
 import app.services.FunctionDeviceService;
+import app.services.UserService;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import org.hibernate.Session;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -16,6 +18,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
@@ -71,6 +74,10 @@ public class FunctionDeviceServlet extends HttpServlet {
                 if(request.getServletPath().equals("/updFunc")) {
                     if (functionDeviceService.updFunctionDevice(functionDevicesEntity)) {
                         request.setAttribute("isFuncupd", "true");
+                        UserService userService = new UserService();
+                        HttpSession session = request.getSession();
+                        UsersEntity authUser = (UsersEntity) session.getAttribute("authUser");//получение авторизованного пользователя из сессии
+                        userService.UserRequest(authUser,functionDevicesEntity);
                     }
                     else request.setAttribute("isFuncupd", "false");
                     doGet(request, response);

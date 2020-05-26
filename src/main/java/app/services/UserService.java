@@ -2,10 +2,7 @@ package app.services;
 
 import app.DAO.DAOinterfaces.UserDAO;
 import app.Util.DAOCreateFactoryUtil;
-import app.entityes.JournalUserRequestViewEntity;
-import app.entityes.UserStatusEntity;
-import app.entityes.UsersEntity;
-import app.entityes.UserviewEntity;
+import app.entityes.*;
 import org.mindrot.jbcrypt.BCrypt;
 
 import java.sql.Timestamp;
@@ -20,6 +17,24 @@ public class UserService {
         UsersEntity user = userDAO.authorization(usersEntity.getLogin());
         if(BCrypt.checkpw(pass, user.getPassword()))return user;
         else return null;
+    }
+    public boolean UserRequest(UsersEntity authUser,FunctionDevicesEntity functionDevicesEntity){
+        JournalEventService journalEventService = new JournalEventService();
+        UserDAO userDAO = DAOCreateFactoryUtil.getInstance().getUserDAO();
+        Timestamp timestampRequest = new Timestamp(System.currentTimeMillis());
+        JournalUserRequestEntity journalUserRequestEntity = new JournalUserRequestEntity();//создание обьекта пользовательского запроса
+        journalUserRequestEntity.setUser(authUser.getIdUser());
+        journalUserRequestEntity.setDateRequest(timestampRequest);
+        journalUserRequestEntity.setStatusRequest(true);
+        Long idUserRequest =  userDAO.addRequest(journalUserRequestEntity);
+        ////
+        JournalEventEntity journalEventEntity = new JournalEventEntity();//создание обьекта события
+        journalEventEntity.setTypeEvent(1L);
+        journalEventEntity.setFunctionDevices(functionDevicesEntity.getIdFunction());
+        journalEventEntity.setData(functionDevicesEntity.getData());
+        journalEventEntity.setDateEvent(timestampRequest);
+        journalEventEntity.setUserRequest(idUserRequest);
+        return journalEventService.addJournalEvent(journalEventEntity);
     }
     public boolean addUser(UsersEntity usersEntity){
         UserDAO userDAO = DAOCreateFactoryUtil.getInstance().getUserDAO();

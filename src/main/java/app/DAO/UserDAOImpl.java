@@ -1,10 +1,7 @@
 package app.DAO;
 
 import app.DAO.DAOinterfaces.UserDAO;
-import app.entityes.JournalUserRequestViewEntity;
-import app.entityes.UserStatusEntity;
-import app.entityes.UsersEntity;
-import app.entityes.UserviewEntity;
+import app.entityes.*;
 import org.hibernate.Session;
 
 import javax.persistence.Query;
@@ -152,6 +149,25 @@ public class UserDAOImpl implements UserDAO {
             Collection<UserStatusEntity> res = query.getResultList();
             session.getTransaction().commit();
             return res;
+        } catch (Exception e) {
+            System.out.println(e);
+            return null;
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+    }
+
+    @Override
+    public Long addRequest(JournalUserRequestEntity journalUserRequestEntity) {
+        Session session = null;
+        try {
+            session = getSession();
+            session.beginTransaction();
+            session.save(journalUserRequestEntity);
+            session.getTransaction().commit();
+            return 1L;
         } catch (Exception e) {
             System.out.println(e);
             return null;

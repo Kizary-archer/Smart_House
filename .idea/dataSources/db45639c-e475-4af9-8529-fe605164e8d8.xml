@@ -793,7 +793,7 @@ true posixrules
     <database id="3" parent="1" name="Smart_house">
       <ObjectId>18499</ObjectId>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>2262</IntrospectionStateNumber>
+      <IntrospectionStateNumber>2361</IntrospectionStateNumber>
       <Current>1</Current>
       <Relations>sequence|table|18509|18506|1
 sequence|table|18514|18511|1
@@ -872,7 +872,7 @@ sequence|table|19325|18526|3
       <Comment>standard public schema</Comment>
       <StateNumber>352</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>2263</IntrospectionStateNumber>
+      <IntrospectionStateNumber>2362</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <access-method id="16" parent="3" name="btree">
@@ -2071,7 +2071,7 @@ controller</ColNames>
       <Position>3</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>2087</StateNumber>
+      <StateNumber>2356</StateNumber>
       <TypeId>20</TypeId>
     </column>
     <column id="186" parent="59" name="status_request">
