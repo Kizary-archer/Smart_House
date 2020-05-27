@@ -22,7 +22,7 @@
 <body>
 <div>
     <nav class="navbar navbar-expand-lg fixed-top">
-        <a class="navbar-brand">Главная</a>
+        <nav class="navbar-brand">${authUser.login}</nav>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon">+</span>
         </button>
@@ -37,7 +37,7 @@
                     </li>
                 </c:if>
                 <li class="nav-item">
-                    <a class="nav-link "href="./listApartments">Выйти</a>
+                    <a class="nav-link "href="./">Выйти</a>
                 </li>
             </ul>
         </div>

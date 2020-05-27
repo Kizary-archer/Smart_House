@@ -38,7 +38,7 @@ public class JournalUserRequestEntity {
     }
 
     @Basic
-    @Column(name = "user", nullable = false)
+    @Column(name = "user_req", nullable = false)
     public Long getUser() {
         return user;
     }
@@ -92,7 +92,7 @@ public class JournalUserRequestEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "user", referencedColumnName = "id_user", nullable = false,insertable = false, updatable = false)
+    @JoinColumn(name = "user_req", referencedColumnName = "id_user", nullable = false,insertable = false, updatable = false)
     public UsersEntity getUsersByUser() {
         return usersByUser;
     }

@@ -44,7 +44,7 @@ public class FunctionDeviceService {
         Collection<JournalEventEntity> journalEventEntities = functionDevicesEntity.getJournalEventsByIdFunction();
         for (JournalEventEntity journalEventEntity:journalEventEntities){
             JsonArray jsonElement = new JsonArray();
-            jsonElement.add(journalEventEntity.getDateEvent().toInstant().plusMillis(14400000).toEpochMilli());
+            jsonElement.add(journalEventEntity.getDateEvent().toInstant().plusMillis(10800000).toEpochMilli());
             jsonElement.add(journalEventEntity.getData());
             jsonEntity.add(jsonElement);
         }

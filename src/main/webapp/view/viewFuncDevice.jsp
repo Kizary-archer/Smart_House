@@ -24,7 +24,6 @@
 <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
 <div class="p-2 d-flex">
     <div class="w-25 px-1" >
-        <h2>Функция устройства</h2>
         <form method="post" class="py-3" >
             <div class="form-row">
                 <div class="form-group col-md-11">
@@ -55,11 +54,8 @@
                         </c:forEach>
                     </select>
                 </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="data">Актуальные данные</label>
-                    <input type="text" class="form-control" id="data" name="data" value=${function.data}>
+                <div class="form-group col-md-1" style="display: none">
+                <input type="text" class="form-control" id="data" name="data" value=${function.data}>
                 </div>
             </div>
             <div class="form-row">
@@ -84,7 +80,7 @@
         </form>
         <c:if test="${isFuncupd == true}">
             <div class="alert alert-success alert-dismissible fade show col-md-12" role="alert">
-                <strong>Устройство обновлено</strong>
+                <strong>Данные обновлены</strong>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -92,7 +88,7 @@
         </c:if>
         <c:if test="${isFuncupd == false}">
             <div class="alert alert-danger alert-dismissible fade show col-md-12" role="alert">
-                <strong>Устройство не обновлено</strong> Проверьте вводимые значения
+                <strong>Данные функции не обновлены</strong> Проверьте вводимые значения
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -100,7 +96,7 @@
         </c:if>
         <c:if test="${isFuncdel == false}">
             <div class="alert alert-danger alert-dismissible fade show col-md-12" role="alert">
-                <strong>Устройство не удалено</strong> Проверьте вводимые значения
+                <strong>функция не удалена</strong> Проверьте вводимые значения
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -111,12 +107,12 @@
         <div id="container" style="height: 400px; min-width: 310px"></div>
         <c:if test="${function.getTypeFunctionByTypeFunction().getRange() == true}">
         <div class="h-25 py-5">
-            <c:if test="${function.getTypeFunctionByTypeFunction().getRange() == true}">
+            <c:if test="${function.getTypeFunctionByTypeFunction().getNameType() == 'измение сотояния'}">
             <div class="col-sm-10 mx-auto">
                 <input type="text" id="range_02">
             </div>
             </c:if>
-            <c:if test="${function.getTypeFunctionByTypeFunction().getRange() == true}">
+            <c:if test="${function.getTypeFunctionByTypeFunction().getNameType() == 'переключатель'}">
             <div>
             <input type="checkbox" checked data-toggle="toggle" data-on="Включено" data-off="Выключено" data-onstyle="success" data-offstyle="danger">
             </div>

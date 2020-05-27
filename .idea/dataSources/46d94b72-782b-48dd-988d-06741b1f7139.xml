@@ -793,7 +793,7 @@ true posixrules
     <database id="3" parent="1" name="Smart_house">
       <ObjectId>18499</ObjectId>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>2359</IntrospectionStateNumber>
+      <IntrospectionStateNumber>2526</IntrospectionStateNumber>
       <Current>1</Current>
       <Relations>sequence|table|18509|18506|1
 sequence|table|18514|18511|1
@@ -872,7 +872,7 @@ sequence|table|19325|18526|3
       <Comment>standard public schema</Comment>
       <StateNumber>352</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>2360</IntrospectionStateNumber>
+      <IntrospectionStateNumber>2527</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <access-method id="16" parent="3" name="btree">
@@ -2067,11 +2067,11 @@ controller</ColNames>
       <StateNumber>1950</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <column id="185" parent="59" name="user">
+    <column id="185" parent="59" name="user_req">
       <Position>3</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>2356</StateNumber>
+      <StateNumber>2523</StateNumber>
       <TypeId>20</TypeId>
     </column>
     <column id="186" parent="59" name="status_request">
@@ -2099,7 +2099,7 @@ controller</ColNames>
     <foreign-key id="189" parent="59" name="journal_user_request_fk">
       <ObjectId>19114</ObjectId>
       <StateNumber>2087</StateNumber>
-      <ColNames>user</ColNames>
+      <ColNames>user_req</ColNames>
       <RefTableId>18593</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>users</RefTableName>

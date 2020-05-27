@@ -29,7 +29,7 @@ public class UserService {
         Long idUserRequest =  userDAO.addRequest(journalUserRequestEntity);
         ////
         JournalEventEntity journalEventEntity = new JournalEventEntity();//создание обьекта события
-        journalEventEntity.setTypeEvent(1L);
+        journalEventEntity.setTypeEvent(21L);
         journalEventEntity.setFunctionDevices(functionDevicesEntity.getIdFunction());
         journalEventEntity.setData(functionDevicesEntity.getData());
         journalEventEntity.setDateEvent(timestampRequest);

@@ -165,9 +165,9 @@ public class UserDAOImpl implements UserDAO {
         try {
             session = getSession();
             session.beginTransaction();
-            session.save(journalUserRequestEntity);
+           Long id = (Long)session.save(journalUserRequestEntity);
             session.getTransaction().commit();
-            return 1L;
+            return id;
         } catch (Exception e) {
             System.out.println(e);
             return null;

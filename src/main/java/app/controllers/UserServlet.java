@@ -109,7 +109,7 @@ public class UserServlet extends HttpServlet {
             response.getWriter().write(json);
         }
         if(request.getServletPath().equals("/DTJournalUserRequestView")) {
-            Long idUser = 2L;
+            Long idUser = Long.valueOf(request.getParameter("idUser"));
             List<JournalUserRequestViewEntity> journalUserRequestViewEntityList = (List<JournalUserRequestViewEntity>) userService.getJournalUserRequestView(1000,0,idUser);
             Gson gson = new GsonBuilder()
                     .excludeFieldsWithoutExposeAnnotation()
@@ -135,7 +135,7 @@ public class UserServlet extends HttpServlet {
         if(request.getServletPath().equals("/delUser")) {
             if (userService.delUser(usersEntity)) {
                 request.setAttribute("isUserdel", "true");
-                RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
+                RequestDispatcher requestDispatcher = request.getRequestDispatcher("view/adminPanel.jsp");
                 requestDispatcher.forward(request, response);
             }
             else request.setAttribute("isUserdel", "false");
