@@ -4,7 +4,7 @@
 
 <div class="accordion mx-auto " id="accordion" style="width: 90%;">
     <div class="card">
-        <div class="card-header bg-secondary" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+        <div class="card-header bg-info" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
             <h5 class="mb-0">
                 <button id="btnUserList" class="btn" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                     Список пользователей
@@ -56,7 +56,7 @@
         </div>
     </div>
     <div class="card">
-        <div class="card-header bg-secondary" id="headingTwo"  data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        <div class="card-header bg-info" id="headingTwo"  data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
             <h5 class="mb-0">
                 <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                     Список пользовательских ролей
@@ -94,7 +94,7 @@
         </div>
     </div>
     <div class="card">
-        <div class="card-header bg-secondary" id="headingThree"  data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        <div class="card-header bg-info" id="headingThree"  data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
             <h5 class="mb-0">
                 <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                     Список событий
@@ -149,7 +149,7 @@
         </div>
     </div>
     <div class="card">
-        <div class="card-header bg-secondary" id="headingFour"  data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+        <div class="card-header bg-info" id="headingFour"  data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
             <h5 class="mb-0">
                 <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                     Список ошибок
@@ -200,7 +200,7 @@
         </div>
     </div>
     <div class="card">
-        <div class="card-header bg-secondary" id="headingFive"  data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+        <div class="card-header bg-info" id="headingFive"  data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
             <h5 class="mb-0">
                 <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                     Список устройств

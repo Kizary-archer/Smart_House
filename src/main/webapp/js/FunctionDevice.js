@@ -40,4 +40,13 @@ $(document).ready( function (){
             $("#data").prop("value", data.from);
         }
     });
+    $('#togle').on('change',function(event){
+
+            if($(this).is(":checked")) {
+                $("#data").val($("#maxData").val());
+            }
+            else{
+                $("#data").val($("#minData").val());
+            }
+    });
 });

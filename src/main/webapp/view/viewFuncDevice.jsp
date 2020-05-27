@@ -114,7 +114,7 @@
             </c:if>
             <c:if test="${function.getTypeFunctionByTypeFunction().getNameType() == 'переключатель'}">
             <div>
-            <input type="checkbox" checked data-toggle="toggle" data-on="Включено" data-off="Выключено" data-onstyle="success" data-offstyle="danger">
+            <input type="checkbox" id="togle" checked data-toggle="toggle" data-on="Включено" data-off="Выключено" data-onstyle="success" data-offstyle="danger">
             </div>
             </c:if>
         </div>
