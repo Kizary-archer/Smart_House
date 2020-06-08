@@ -14,7 +14,6 @@ $(document).ready( function () {
             },
             "columns": [
                 {"data": "idRequest"},
-                {"data": "idUser"},
                 {"data": "login"},
                 {"data": "nameEvent"},
                 {"data": "dateRequest"},
