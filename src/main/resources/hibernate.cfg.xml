@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL95Dialect</property>
+        <property name="connection.url">jdbc:postgresql://localhost:5432/Smart_house</property>
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.username">postgres</property>
+        <property name="connection.password">147q5w963</property>
+
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.connection.release_mode">auto</property>
+        <property name="current_session_context_class">thread</property>
+        <property name="hibernate.connection.autoReconnect">true</property>
+
+
+        <mapping class="app.entityes.ControllerModelEntity"/>
+        <mapping class="app.entityes.ControllersEntity"/>
+        <mapping class="app.entityes.DevicesEntity"/>
+        <mapping class="app.entityes.FunctionDevicesEntity"/>
+        <mapping class="app.entityes.FunctionsGroupsEntity"/>
+        <mapping class="app.entityes.GroupControllerEntity"/>
+        <mapping class="app.entityes.GroupFunctionEntity"/>
+        <mapping class="app.entityes.GroupsControllersEntity"/>
+        <mapping class="app.entityes.JournalErrorEntity"/>
+        <mapping class="app.entityes.JournalEventEntity"/>
+        <mapping class="app.entityes.JournalUserRequestEntity"/>
+        <mapping class="app.entityes.PermisionsEntity"/>
+        <mapping class="app.entityes.PermissionUserRoleEntity"/>
+        <mapping class="app.entityes.TypeDevicesEntity"/>
+        <mapping class="app.entityes.TypeErrorEntity"/>
+        <mapping class="app.entityes.TypeEventEntity"/>
+        <mapping class="app.entityes.TypeFunctionEntity"/>
+        <mapping class="app.entityes.UserRoleEntity"/>
+        <mapping class="app.entityes.UserStatusEntity"/>
+        <mapping class="app.entityes.UsersEntity"/>
+        <mapping class="app.entityes.WorkStatusEntity"/>
+        <mapping class="app.entityes.ControllerviewEntity"/>
+        <mapping class="app.entityes.DeviceviewEntity"/>
+        <mapping class="app.entityes.UserviewEntity"/>
+        <mapping class="app.entityes.JournalErrorViewEntity"/>
+        <mapping class="app.entityes.JournalEventViewEntity"/>
+        <mapping class="app.entityes.JournalUserRequestViewEntity"/>
+        <mapping class="app.entityes.FunctiondeviceviewEntity"/>
+
+    </session-factory>
+</hibernate-configuration>
