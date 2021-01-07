@@ -1,11 +1,7 @@
 package app.services;
 
 import app.DAO.DAOinterfaces.ControllersDAO;
-import app.DAO.DAOinterfaces.DevicesDAO;
-import app.Util.DAOCreateFactoryUtil;
-import app.entityes.ControllersEntity;
-import app.entityes.DevicesEntity;
-import app.entityes.DeviceviewEntity;
+import app.domain.ControllersEntity;
 
 import java.sql.Timestamp;
 import java.util.Collection;

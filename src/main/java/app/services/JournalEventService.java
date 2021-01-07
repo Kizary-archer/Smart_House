@@ -1,11 +1,8 @@
 package app.services;
 
-import app.DAO.DAOinterfaces.JournalErrorDAO;
 import app.DAO.DAOinterfaces.JournalEventDAO;
-import app.Util.DAOCreateFactoryUtil;
-import app.entityes.JournalErrorEntity;
-import app.entityes.JournalEventEntity;
-import app.entityes.JournalEventViewEntity;
+import app.domain.JournalEventEntity;
+import app.domain.JournalEventViewEntity;
 
 import java.util.Collection;
 

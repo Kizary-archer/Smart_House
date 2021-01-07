@@ -1,8 +1,7 @@
 package app.services;
 
 import app.DAO.DAOinterfaces.FunctionDevicesDAO;
-import app.Util.DAOCreateFactoryUtil;
-import app.entityes.*;
+import app.domain.*;
 import com.google.gson.JsonArray;
 
 import java.util.Collection;

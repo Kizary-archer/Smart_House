@@ -1,10 +1,9 @@
 package app.controllers;
 
-import app.Util.HibernateSessionFactoryUtil;
 import app.builder.UserBuilder;
 import app.builder.UserViewBuilder;
 import app.builder.UserRoleBuilder;
-import app.entityes.*;
+import app.domain.*;
 import app.services.UserRoleService;
 import app.services.UserService;
 import com.google.gson.Gson;

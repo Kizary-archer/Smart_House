@@ -1,13 +1,11 @@
 package app.services;
 
 import app.DAO.DAOinterfaces.UserDAO;
-import app.Util.DAOCreateFactoryUtil;
-import app.entityes.*;
+import app.domain.*;
 import org.mindrot.jbcrypt.BCrypt;
 
 import java.sql.Timestamp;
 import java.util.Collection;
-import java.util.List;
 
 public class UserService {
 

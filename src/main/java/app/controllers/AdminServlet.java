@@ -3,13 +3,10 @@ package app.controllers;
 import app.builder.JournalErrorViewBuilder;
 import app.builder.JournalEventViewBuilder;
 import app.builder.UserRoleBuilder;
-import app.entityes.JournalErrorViewEntity;
-import app.entityes.JournalEventViewEntity;
-import app.entityes.UserRoleEntity;
-import app.entityes.UserviewEntity;
+import app.domain.JournalErrorViewEntity;
+import app.domain.JournalEventViewEntity;
 import app.services.JournalErrorService;
 import app.services.JournalEventService;
-import app.services.UserService;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 

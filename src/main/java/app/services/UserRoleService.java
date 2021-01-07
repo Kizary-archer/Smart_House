@@ -1,11 +1,7 @@
 package app.services;
 
-import app.DAO.DAOinterfaces.UserDAO;
 import app.DAO.DAOinterfaces.UserRoleDAO;
-import app.Util.DAOCreateFactoryUtil;
-import app.entityes.UserRoleEntity;
-import app.entityes.UsersEntity;
-import app.entityes.UserviewEntity;
+import app.domain.UserRoleEntity;
 
 import java.util.Collection;
 

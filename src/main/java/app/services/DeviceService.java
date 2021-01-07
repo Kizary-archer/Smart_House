@@ -1,9 +1,7 @@
 package app.services;
 
 import app.DAO.DAOinterfaces.DevicesDAO;
-import app.DAO.DAOinterfaces.UserDAO;
-import app.Util.DAOCreateFactoryUtil;
-import app.entityes.*;
+import app.domain.*;
 
 import java.sql.Timestamp;
 import java.util.Collection;

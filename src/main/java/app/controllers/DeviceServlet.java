@@ -1,11 +1,9 @@
 package app.controllers;
 
 import app.builder.*;
-import app.entityes.*;
+import app.domain.*;
 import app.services.ControllerService;
 import app.services.DeviceService;
-import app.services.UserRoleService;
-import app.services.UserService;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
