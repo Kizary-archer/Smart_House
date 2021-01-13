@@ -1,10 +1,9 @@
-package app.domain;
+package app.entities;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
 import javax.persistence.*;
-import java.util.Objects;
 
 @EqualsAndHashCode
 @Getter
@@ -16,7 +15,7 @@ public class UserStatus {
     private Integer idUserStatus;
     @Basic
     @Column(name = "status_name", nullable = false, length = 50)
-    private String statusName;
+    private String status;
     @Basic
     @Column(name = "description", length = 200)
     private String description;

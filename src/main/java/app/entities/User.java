@@ -1,8 +1,9 @@
-package app.domain;
+package app.entities;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.experimental.Accessors;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -11,9 +12,11 @@ import java.sql.Timestamp;
 @Table(name = "users")
 @Getter
 @Setter
+@Accessors(chain = true)
 @EqualsAndHashCode
 public class User {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idUser;
     @Column(name = "login")
     private String login;

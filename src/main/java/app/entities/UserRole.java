@@ -1,10 +1,9 @@
-package app.domain;
+package app.entities;
 
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
-import java.util.Objects;
 
 @Entity
 @Table(name = "user_role")

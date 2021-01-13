@@ -12,9 +12,9 @@ import java.util.Collections;
 @EqualsAndHashCode(callSuper = true)
 public class AuthorizedUser extends User {
 
-    Integer id;
+    private final Integer id;
 
-    public AuthorizedUser(app.domain.User user) {
+    public AuthorizedUser(app.entities.User user) {
         this(user.getIdUser(), user.getLogin(), user.getPassword(), Collections.singletonList(user.getRole()));
     }
 
