@@ -12,3 +12,5 @@ spring:
         format_sql: true
         ddl-auto: false
     generate-ddl: false
+springdoc:
+  version: '@springdoc.version@'

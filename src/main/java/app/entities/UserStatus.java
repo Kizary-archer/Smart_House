@@ -2,12 +2,16 @@ package app.entities;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.Setter;
+import lombok.experimental.Accessors;
 
 import javax.persistence.*;
 
 @EqualsAndHashCode
 @Getter
+@Setter
 @Entity
+@Accessors(chain = true)
 @Table(name = "user_status")
 public class UserStatus {
     @Id

@@ -2,7 +2,6 @@ package app.services.impl;
 
 import app.dto.UserCreateDto;
 import app.dto.UserDto;
-import app.dto.UserUpdateDto;
 import app.mapper.UserMapper;
 import app.repository.RoleRepository;
 import app.repository.StatusRepository;
@@ -19,8 +18,7 @@ import java.util.Optional;
 @Service
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
-
-public class UserServices implements UserService {
+public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
     private final StatusRepository statusRepository;
@@ -37,11 +35,14 @@ public class UserServices implements UserService {
         return userRepository.findById(id).map(userMapper::map);
     }
 
+    @Override
     public Optional<List<UserDto>> getAllUsers() {
         return Optional.of(userRepository.findAll())
                 .map(userMapper::map);
     }
 
+
+    @Override
     @Transactional
     public Optional<UserDto> createUser(UserCreateDto userCreateDto) {
         return roleRepository.findByRole(userCreateDto.getRole())
@@ -52,7 +53,6 @@ public class UserServices implements UserService {
                                 .setStatus(userStatus)))
                 .map(userRepository::save)
                 .map(userMapper::map);
-
     }
 
     @Override
@@ -63,17 +63,15 @@ public class UserServices implements UserService {
 
     @Override
     @Transactional
-    public Optional<UserDto> updateUser(UserUpdateDto userUpdateDto) {
-        return roleRepository.findByRole(userUpdateDto.getRole())
-                .flatMap(userRole -> statusRepository.findByStatus(userUpdateDto.getStatus())
-                        .map(userStatus -> userMapper.map(userUpdateDto)
-                                .setPassword(passwordEncoder.encode(userUpdateDto.getPassword()))
+    public Optional<UserDto> updateUser(UserDto userDto) {
+        return roleRepository.findByRole(userDto.getRole())
+                .flatMap(userRole -> statusRepository.findByStatus(userDto.getStatus())
+                        .map(userStatus -> userMapper.map(userDto)
+                                .setPassword(passwordEncoder.encode(userDto.getPassword()))
                                 .setRole(userRole)
                                 .setStatus(userStatus)))
                 .map(userRepository::save)
                 .map(userMapper::map);
-
-
     }
 
 }

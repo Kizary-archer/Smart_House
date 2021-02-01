@@ -2,13 +2,14 @@ package app.dto;
 
 import lombok.Value;
 
-import java.util.Date;
+import java.sql.Timestamp;
 
 @Value
 public class UserDto {
     Integer id;
     String login;
-    Date registrationDate;
+    String password;
+    Timestamp registrationDate;
     String status;
     String role;
 }

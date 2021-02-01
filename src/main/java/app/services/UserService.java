@@ -2,8 +2,6 @@ package app.services;
 
 import app.dto.UserCreateDto;
 import app.dto.UserDto;
-import app.dto.UserUpdateDto;
-import app.entities.User;
 
 import java.util.List;
 import java.util.Optional;
@@ -25,5 +23,5 @@ public interface UserService {
 
     void deleteUserById(Integer id);
 
-    Optional<UserDto> updateUser(UserUpdateDto userDto);
+    Optional<UserDto> updateUser(UserDto userDto);
 }

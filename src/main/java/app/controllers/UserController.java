@@ -2,17 +2,15 @@ package app.controllers;
 
 import app.dto.UserCreateDto;
 import app.dto.UserDto;
-import app.dto.UserUpdateDto;
 import app.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
-@RequestMapping("/user")
+@RestController
+@RequestMapping("/users")
 @RequiredArgsConstructor
 public class UserController {
 
@@ -25,7 +23,7 @@ public class UserController {
                 .orElse(ResponseEntity.badRequest().build());
     }
 
-    @GetMapping("/{login}")
+    @GetMapping("/login/{login}")
     public ResponseEntity<UserDto> getUserByLogin(@PathVariable String login) {
         return userService.getUserByLogin(login)
                 .map(ResponseEntity::ok)
@@ -47,8 +45,8 @@ public class UserController {
     }
 
     @PutMapping
-    public ResponseEntity<UserDto> updateUser(@ModelAttribute UserUpdateDto userUpdateDto) {
-        return userService.updateUser(userUpdateDto)
+    public ResponseEntity<UserDto> updateUser(@ModelAttribute UserDto userDto) {
+        return userService.updateUser(userDto)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.badRequest().build());
     }

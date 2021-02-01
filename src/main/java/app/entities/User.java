@@ -4,9 +4,13 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
+import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -17,7 +21,8 @@ import java.sql.Timestamp;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idUser;
+    @Column(name = "id_user")
+    private Integer id;
     @Column(name = "login")
     private String login;
     @Column(name = "password")
@@ -30,4 +35,10 @@ public class User {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "role")
     private UserRole role;
+
+    public Collection<? extends GrantedAuthority> grantedAuthorities() {
+        Set<GrantedAuthority> grantedAuthorities = new HashSet<>(role.getPermissions());
+        grantedAuthorities.add(role);
+        return grantedAuthorities;
+    }
 }
