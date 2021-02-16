@@ -16,25 +16,23 @@ public class UserController {
 
     private final UserService userService;
 
+
     @GetMapping("/{id}")
     public ResponseEntity<UserDto> getUserById(@PathVariable Integer id) {
-        return userService.getUserById(id)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.badRequest().build());
+        return ResponseEntity.ok()
+                .body(userService.getUserById(id));
     }
 
     @GetMapping("/login/{login}")
     public ResponseEntity<UserDto> getUserByLogin(@PathVariable String login) {
-        return userService.getUserByLogin(login)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.badRequest().build());
+        return ResponseEntity.ok()
+                .body(userService.getUserByLogin(login));
     }
 
     @GetMapping
     public ResponseEntity<List<UserDto>> getAllUsers() {
-        return userService.getAllUsers()
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.badRequest().build());
+        return ResponseEntity.ok()
+                .body(userService.getAllUsers());
     }
 
     @PostMapping
@@ -50,8 +48,9 @@ public class UserController {
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.badRequest().build());
     }
+
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteUser(@PathVariable Integer id){
+    public ResponseEntity<Void> deleteUser(@PathVariable Integer id) {
         userService.deleteUserById(id);
         return ResponseEntity.ok().build();
     }

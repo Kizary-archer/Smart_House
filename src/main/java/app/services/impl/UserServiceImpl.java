@@ -1,13 +1,16 @@
 package app.services.impl;
 
+import app.constants.MessageConstants;
 import app.dto.UserCreateDto;
 import app.dto.UserDto;
+import app.exception.EntityNotFoundException;
 import app.mapper.UserMapper;
 import app.repository.RoleRepository;
 import app.repository.StatusRepository;
 import app.repository.UserRepository;
 import app.services.UserService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,6 +21,7 @@ import java.util.Optional;
 @Service
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
+@Slf4j
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
@@ -26,19 +30,28 @@ public class UserServiceImpl implements UserService {
     private final PasswordEncoder passwordEncoder;
 
     @Override
-    public Optional<UserDto> getUserByLogin(String login) {
-        return userRepository.findByLogin(login).map(userMapper::map);
+    public UserDto getUserByLogin(String login) {
+        return userRepository.findByLogin(login).map(userMapper::map).orElseThrow(() -> {
+            log.error("User with login " + login + " has not been found");
+            return new EntityNotFoundException(MessageConstants.USER_LOGIN_NOT_FOUND, "login");
+        });
     }
 
     @Override
-    public Optional<UserDto> getUserById(Integer id) {
-        return userRepository.findById(id).map(userMapper::map);
+    public UserDto getUserById(Integer id) {
+        return userRepository.findById(id).map(userMapper::map).orElseThrow(() -> {
+            log.error("User with id " + id + " has not been found");
+            return new EntityNotFoundException(MessageConstants.USER_ID_NOT_FOUND, "id");
+        });
     }
 
     @Override
-    public Optional<List<UserDto>> getAllUsers() {
+    public List<UserDto> getAllUsers() {
         return Optional.of(userRepository.findAll())
-                .map(userMapper::map);
+                .map(userMapper::map).orElseThrow(() -> {
+            log.error("Users have not been found");
+            return new EntityNotFoundException(MessageConstants.USERS_NOT_FOUND, "id");
+        });
     }
 
 

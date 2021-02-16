@@ -1,6 +1,6 @@
 package app.security;
 
-import app.Util.MessageConstants;
+import app.util.MessageConstants;
 import app.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;

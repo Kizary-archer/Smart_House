@@ -13,11 +13,11 @@ public interface UserService {
      * @param login логин пользвателя
      * @return сущьность пользователя
      */
-    Optional<UserDto> getUserByLogin(String login);
+    UserDto getUserByLogin(String login);
 
-    Optional<UserDto> getUserById(Integer id);
+    UserDto getUserById(Integer id);
 
-    Optional<List<UserDto>> getAllUsers();
+    List<UserDto> getAllUsers();
 
     Optional<UserDto> createUser(UserCreateDto userCreateDto);
 

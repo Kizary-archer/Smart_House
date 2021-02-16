@@ -1,5 +1,3 @@
-package app.services.impl;
-
 import app.dto.UserCreateDto;
 import app.entities.User;
 import app.entities.UserRole;
@@ -10,13 +8,13 @@ import app.repository.RoleRepository;
 import app.repository.StatusRepository;
 import app.repository.UserRepository;
 import app.services.UserService;
+import app.services.impl.UserServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.sql.Timestamp;
@@ -27,7 +25,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.*;
 
@@ -52,7 +50,7 @@ class UserServiceImplTest {
     private UserStatus userStatus;
 
     @BeforeEach
-    void beforeAllTests() throws Throwable {
+    void beforeAllTests() {
         userService = new UserServiceImpl(userRepositoryMock, roleRepositoryMock, statusRepositoryMock,userMapper, passwordEncoderMock);
         userRole = new UserRole().setRole("role");
         userStatus = new UserStatus().setStatus("status");
@@ -70,22 +68,22 @@ class UserServiceImplTest {
     @Test
     void getUserByLogin() {
         when(userRepositoryMock.findByLogin(anyString())).thenReturn(Optional.of(user));
-        assertTrue(userService.getUserByLogin("user1").isPresent());
-        assertEquals(userService.getUserByLogin("user1").get().getLogin(),user.getLogin());
+        assertNotNull(userService.getUserByLogin("user1"));
+        assertEquals(user.getLogin(), userService.getUserByLogin("user1").getLogin());
     }
 
     @Test
     void getUserById() {
         when(userRepositoryMock.findById(anyInt())).thenReturn(Optional.of(user));
-        assertTrue(userService.getUserById(1).isPresent());
-        assertEquals(userService.getUserById(1).get().getId(),user.getId());
+        assertNotNull(userService.getUserById(1));
+        assertEquals(userService.getUserById(1).getId(),user.getId());
     }
 
     @Test
     void getAllUsers() {
         when(userRepositoryMock.findAll()).thenReturn(users);
-        assertTrue(userService.getAllUsers().isPresent());
-        assertEquals(userService.getAllUsers(),Optional.of(userMapper.map(users)));
+        assertNotNull(userService.getAllUsers());
+        assertEquals(userService.getAllUsers(),userMapper.map(users));
     }
 
     @Test
