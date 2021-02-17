@@ -1,6 +1,5 @@
 package app.services;
 
-import app.dto.UserCreateDto;
 import app.dto.UserDto;
 
 import java.util.List;
