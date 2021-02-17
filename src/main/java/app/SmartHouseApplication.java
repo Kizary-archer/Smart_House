@@ -14,12 +14,4 @@ public class SmartHouseApplication {
     public static void main(String[] args) {
         SpringApplication.run(SmartHouseApplication.class,args);
     }
-
-    @Bean
-    public OpenAPI customOpenAPI(@Value("${springdoc.version}") String appVersion) {
-        return new OpenAPI()
-                .components(new Components())
-                .info(new Info().title("Books API").version(appVersion)
-                        .license(new License().name("Apache 2.0").url("http://springdoc.org")));
-    }
 }

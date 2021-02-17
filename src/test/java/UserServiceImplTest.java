@@ -1,4 +1,5 @@
 import app.dto.UserCreateDto;
+import app.dto.UserDto;
 import app.entities.User;
 import app.entities.UserRole;
 import app.entities.UserStatus;
@@ -17,7 +18,6 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import java.sql.Timestamp;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
@@ -92,8 +92,8 @@ class UserServiceImplTest {
         when(roleRepositoryMock.findByRole(anyString())).thenReturn(Optional.of(userRole));
         when(statusRepositoryMock.findByStatus(anyString())).thenReturn(Optional.of(userStatus));
         when(passwordEncoderMock.encode(any())).thenReturn("scans");
-        UserCreateDto userCreateDto = new UserCreateDto("aaa","aaa",new Timestamp(123124124L),"sss","sss");
-        assertEquals(userService.createUser(userCreateDto), Optional.of(userMapper.map(user)));
+        UserDto userDto = new UserDto(1,"aaa","aaa","sss","sss");
+        assertEquals(userService.createUser(userDto), Optional.of(userMapper.map(user)));
     }
 
     @Test

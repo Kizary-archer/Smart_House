@@ -14,3 +14,6 @@ spring:
     generate-ddl: false
 springdoc:
   version: '@springdoc.version@'
+server:
+  error:
+    include-stacktrace: always

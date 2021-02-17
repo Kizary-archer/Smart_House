@@ -1,12 +1,16 @@
 package app.controllers;
 
-import app.dto.UserCreateDto;
 import app.dto.UserDto;
+import app.group.UserCreate;
+import app.group.UserUpdate;
 import app.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+import javax.validation.constraints.PositiveOrZero;
 import java.util.List;
 
 @RestController
@@ -18,7 +22,7 @@ public class UserController {
 
 
     @GetMapping("/{id}")
-    public ResponseEntity<UserDto> getUserById(@PathVariable Integer id) {
+    public ResponseEntity<UserDto> getUserById(@PathVariable @PositiveOrZero Integer id) {
         return ResponseEntity.ok()
                 .body(userService.getUserById(id));
     }
@@ -36,14 +40,14 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity<UserDto> createUser(@ModelAttribute UserCreateDto userCreateDto) {
-        return userService.createUser(userCreateDto)
+    public ResponseEntity<UserDto> createUser(@Validated(UserCreate.class) @RequestBody UserDto userDto) {
+        return userService.createUser(userDto)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.badRequest().build());
     }
 
     @PutMapping
-    public ResponseEntity<UserDto> updateUser(@ModelAttribute UserDto userDto) {
+    public ResponseEntity<UserDto> updateUser(@Validated(UserUpdate.class) @RequestBody UserDto userDto) {
         return userService.updateUser(userDto)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.badRequest().build());

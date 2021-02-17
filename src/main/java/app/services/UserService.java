@@ -19,7 +19,7 @@ public interface UserService {
 
     List<UserDto> getAllUsers();
 
-    Optional<UserDto> createUser(UserCreateDto userCreateDto);
+    Optional<UserDto> createUser(UserDto userDto);
 
     void deleteUserById(Integer id);
 
