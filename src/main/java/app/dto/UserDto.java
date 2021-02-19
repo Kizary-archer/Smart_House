@@ -1,13 +1,16 @@
 package app.dto;
 
-import app.group.UserCreate;
-import app.group.UserUpdate;
+import app.validation.group.UserCreate;
+import app.validation.group.UserUpdate;
 import lombok.Value;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Null;
 
+/**
+ * Dto пользователя
+ */
 @Value
 public class UserDto {
     @Null(groups = UserCreate.class,message = "id must be null")
@@ -15,7 +18,7 @@ public class UserDto {
     Integer id;
     @NotBlank(message = "login must not be empty")
     String login;
-    @NotBlank(message = "password must not be empty")
+    @NotBlank(message = "password must not be empty",groups = {UserCreate.class,UserUpdate.class})
     String password;
     @NotBlank
     String status;

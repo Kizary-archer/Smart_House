@@ -11,7 +11,6 @@ import app.services.UserService;
 import app.services.impl.UserServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -28,7 +27,6 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.*;
 
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @ExtendWith(MockitoExtension.class)
 class UserServiceImplTest {
 
@@ -109,6 +107,7 @@ class UserServiceImplTest {
         when(roleRepositoryMock.findByRole(anyString())).thenReturn(Optional.of(userRole));
         when(statusRepositoryMock.findByStatus(anyString())).thenReturn(Optional.of(userStatus));
         when(passwordEncoderMock.encode(any())).thenReturn("scans");
+        when(userRepositoryMock.findById(anyInt())).thenReturn(Optional.ofNullable(user));
         assertEquals(userService.updateUser(userMapper.map(user)), Optional.of(userMapper.map(user)));
     }
 }
