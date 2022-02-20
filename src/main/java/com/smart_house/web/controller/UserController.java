@@ -1,10 +1,11 @@
 package com.smart_house.web.controller;
 
 import com.smart_house.dto.UserDto;
+import com.smart_house.service.UserService;
 import com.smart_house.validation.group.UserCreate;
 import com.smart_house.validation.group.UserUpdate;
-import com.smart_house.service.UserService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +16,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/users")
 @RequiredArgsConstructor
+@Slf4j
 public class UserController {
 
     private final UserService userService;

@@ -17,3 +17,15 @@ springdoc:
 server:
   error:
     include-stacktrace: always
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    logfile:
+      external_file: logfile.log
+logging:
+  level:
+    root: info
+  file:
+    name: logfile.log

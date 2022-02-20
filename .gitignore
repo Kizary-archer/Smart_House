@@ -2,4 +2,6 @@
 /out/
 /bd_damp/
 /.idea/
-/src/main/webapp22/js/Highcharts/
+/logfile.log
+/*.iml
+/*.gz

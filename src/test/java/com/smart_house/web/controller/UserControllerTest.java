@@ -6,14 +6,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Import;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MockMvcBuilder;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.test.web.servlet.setup.StandaloneMockMvcBuilder;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -22,14 +19,16 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @Import(MockSpringSecurityTestConfiguration.class)
 @WithMockUser
 class UserControllerTest {
-
-    StandaloneMockMvcBuilder mockMvc;
+    MockMvc mockMvc;
     @MockBean
     UserService userService;
 
+    @Autowired
+    UserController userController;
+
     @BeforeEach
     void setUp() {
-        mockMvc = MockMvcBuilders.standaloneSetup(UserController.class).
+        mockMvc = MockMvcBuilders.standaloneSetup(userController).build();
     }
 
     @Test
@@ -43,7 +42,7 @@ class UserControllerTest {
     @Test
     void getAllUsers() throws Exception {
         mockMvc.perform(get("/users")
-                .contentType("application/json"))
+                        .contentType("application/json"))
                 .andExpect(status().isOk());
     }
 

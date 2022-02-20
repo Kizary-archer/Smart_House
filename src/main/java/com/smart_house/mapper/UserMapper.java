@@ -24,7 +24,7 @@ public interface UserMapper {
     List<UserDto> map(List<User> users);
 
     @Named("passwordToDto")
-    static String passwordToDto(String pass) {
+    static String passwordToDto(String password) {
         return "";
     }
 }
