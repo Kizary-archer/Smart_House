@@ -1,10 +1,13 @@
 package com.smart_house.entities;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.experimental.Accessors;
+import org.hibernate.Hibernate;
 import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
@@ -12,7 +15,6 @@ import java.util.Set;
 @Getter
 @Setter
 @Accessors(chain = true)
-@EqualsAndHashCode
 public class UserRole implements GrantedAuthority {
     @Id
     @Column(name = "id_role", nullable = false)
@@ -28,8 +30,22 @@ public class UserRole implements GrantedAuthority {
             inverseJoinColumns = {@JoinColumn(name = "permission")}
     )
     private Set<Permission> permissions;
+
     @Override
     public String getAuthority() {
         return role;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        UserRole userRole = (UserRole) o;
+        return idRole != null && Objects.equals(idRole, userRole.idRole);
+    }
+
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
     }
 }

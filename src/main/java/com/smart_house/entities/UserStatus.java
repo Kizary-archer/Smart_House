@@ -1,13 +1,13 @@
 package com.smart_house.entities;
 
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
+import org.hibernate.Hibernate;
 
 import javax.persistence.*;
+import java.util.Objects;
 
-@EqualsAndHashCode
 @Getter
 @Setter
 @Entity
@@ -24,4 +24,16 @@ public class UserStatus {
     @Column(name = "description", length = 200)
     private String description;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        UserStatus that = (UserStatus) o;
+        return idUserStatus != null && Objects.equals(idUserStatus, that.idUserStatus);
+    }
+
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
+    }
 }

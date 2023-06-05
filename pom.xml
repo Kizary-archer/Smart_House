@@ -108,9 +108,6 @@
                         <configuration>
                             <mainClass>com.smart_house.SmartHouseApplication</mainClass>
                         </configuration>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
                     </execution>
                 </executions>
             </plugin>
